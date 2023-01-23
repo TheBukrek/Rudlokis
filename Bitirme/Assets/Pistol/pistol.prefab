@@ -31,6 +31,37 @@ Transform:
   m_Father: {fileID: 4511655667520052993}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2035814277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2035814278}
+  m_Layer: 7
+  m_Name: Left Attach Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2035814278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035814277}
+  m_LocalRotation: {x: -0.1735277, y: -0.0064691054, z: -0.036688104, w: 0.9841241}
+  m_LocalPosition: {x: 0.0055, y: 0.008, z: -0.004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4511655667520052993}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -20, y: 0, z: -4.27}
 --- !u!1 &2048707777
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2048707778}
   m_Layer: 7
-  m_Name: Attach Point
+  m_Name: Right Attach Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,8 +104,8 @@ GameObject:
   - component: {fileID: 4511655667520052993}
   - component: {fileID: 994940816}
   - component: {fileID: 994940815}
-  - component: {fileID: 994940814}
   - component: {fileID: 994940817}
+  - component: {fileID: 6766117561449019485}
   m_Layer: 7
   m_Name: pistol
   m_TagString: Untagged
@@ -98,6 +129,7 @@ Transform:
   - {fileID: 4511655667520052999}
   - {fileID: 2048707778}
   - {fileID: 1868707905}
+  - {fileID: 2035814278}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -130,7 +162,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.012059392, y: 0.0384833, z: 0.04999017}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &994940814
+--- !u!114 &994940817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,7 +171,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4511655667520406305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 901ae7f64a4c4d94f84ea9995849c6a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 7367096669260372379, guid: 8535affee00eb1644b63fd6816d3907b, type: 3}
+  spawnPoint: {fileID: 1868707905}
+  fireSpeed: 20
+--- !u!114 &6766117561449019485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4511655667520406305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14064c46a148d6641805e7c7be280855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -148,7 +195,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 12
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -208,7 +255,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 2048707778}
+  m_AttachTransform: {fileID: 0}
   m_AttachEaseInTime: 0.15
   m_MovementType: 2
   m_VelocityDamping: 1
@@ -245,21 +292,8 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!114 &994940817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4511655667520406305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 901ae7f64a4c4d94f84ea9995849c6a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 7367096669260372379, guid: 8535affee00eb1644b63fd6816d3907b, type: 3}
-  spawnPoint: {fileID: 1868707905}
-  fireSpeed: 20
+  leftAttachTransform: {fileID: 2035814278}
+  rightAttachTransform: {fileID: 2048707778}
 --- !u!1 &4511655667520406309
 GameObject:
   m_ObjectHideFlags: 0
