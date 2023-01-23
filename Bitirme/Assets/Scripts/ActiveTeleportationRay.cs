@@ -11,6 +11,9 @@ public class ActiveTeleportationRay : MonoBehaviour
         
     public InputActionProperty leftactive;
     public InputActionProperty rightactive;
+
+    public InputActionProperty leftCancel;
+    public InputActionProperty rightCancel;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +23,7 @@ public class ActiveTeleportationRay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lefttp.SetActive(leftactive.action.ReadValue<float>() > 0.1f);
-        righttp.SetActive(rightactive.action.ReadValue<float>() > 0.1f);
+        lefttp.SetActive(leftCancel.action.ReadValue<float>() == 0 && leftactive.action.ReadValue<float>() > 0.1f);
+        righttp.SetActive(rightCancel.action.ReadValue<float>() == 0 && rightactive.action.ReadValue<float>() > 0.1f);
     }
 }
