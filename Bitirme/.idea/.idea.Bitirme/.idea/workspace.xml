@@ -7,6 +7,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/XROffsetGrabInteractable.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -80,6 +83,8 @@
       <workItem from="1674306356824" duration="60000" />
       <workItem from="1674307198911" duration="1188000" />
       <workItem from="1674470685225" duration="2429000" />
+      <workItem from="1674555403455" duration="959000" />
+      <workItem from="1674556818053" duration="2109000" />
     </task>
     <servers />
   </component>
