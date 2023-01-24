@@ -292,6 +292,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1577131379, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+      propertyPath: duration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577131379, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+      propertyPath: intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577131379, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+      propertyPath: hapticOnActive.duration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577131379, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+      propertyPath: hapticOnActive.intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4511655667520052993, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1664,6 +1680,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1500681447078870589, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500681447323200467, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
+      propertyPath: m_HapticSelectEnterDuration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500681447323200467, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
+      propertyPath: m_HapticSelectEnterIntensity
+      value: 0.569
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500681447323200467, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
+      propertyPath: m_PlayHapticsOnSelectEntered
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
