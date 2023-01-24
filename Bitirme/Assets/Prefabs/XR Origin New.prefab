@@ -387,7 +387,7 @@ MonoBehaviour:
   m_HoverTimeToSelect: 0.5
   m_EnableUIInteraction: 1
   m_AllowAnchorControl: 1
-  m_UseForceGrab: 0
+  m_UseForceGrab: 1
   m_RotateSpeed: 180
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
@@ -1973,7 +1973,7 @@ MonoBehaviour:
   m_HoverTimeToSelect: 0.5
   m_EnableUIInteraction: 1
   m_AllowAnchorControl: 1
-  m_UseForceGrab: 0
+  m_UseForceGrab: 1
   m_RotateSpeed: 180
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
@@ -2454,27 +2454,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af420898021e2fc40b089363eb361db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lefttp: {fileID: 1500681448166025726}
-  righttp: {fileID: 1500681446948855017}
-  leftactive:
+  leftTeleportationRay: {fileID: 1500681448166025726}
+  rightTeleportationRay: {fileID: 1500681446948855017}
+  leftActivate:
     m_UseReference: 1
     m_Action:
-      m_Name: Leftactive
+      m_Name: Left Activate
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 6dff4b2a-1806-4921-bb08-453822e378e0
+      m_Id: e1221348-a1fe-44c2-b517-36a2d3472af2
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  rightactive:
+  rightActivate:
     m_UseReference: 1
     m_Action:
-      m_Name: Rightactive
+      m_Name: Right Activate
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: d5a34e8a-dc91-41a1-a84b-46fa9e52c793
+      m_Id: 5a80fb47-4745-4137-bbc3-b1a94ba03654
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
