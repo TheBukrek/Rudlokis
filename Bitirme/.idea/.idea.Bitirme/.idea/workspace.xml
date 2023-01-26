@@ -61,10 +61,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15872">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="15872" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -85,6 +85,7 @@
       <workItem from="1674470685225" duration="2429000" />
       <workItem from="1674555403455" duration="959000" />
       <workItem from="1674556818053" duration="4599000" />
+      <workItem from="1674726664200" duration="1806000" />
     </task>
     <servers />
   </component>
@@ -93,23 +94,4 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/ActiveTeleportationRay.cs</url>
-          <line>30</line>
-          <properties documentPath="C:\Users\onura\Documents\GitHub\bitirme\Bitirme\Assets\Scripts\ActiveTeleportationRay.cs" initialLine="30" containingFunctionPresentation="method 'Update'">
-            <startOffsets>
-              <option value="871" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1020" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
 </project>
