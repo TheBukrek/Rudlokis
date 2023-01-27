@@ -11,7 +11,7 @@ public class FireBulletOnActivate : MonoBehaviour
     public float fireSpeed;
     public int ammoCount;
     public TextMeshProUGUI ammoCountText;
-    private HapticInteractable hapticInteractable;
+    public ParticleSystem muzzleFlash;
 
 
     // Start is called before the first frame update
@@ -21,7 +21,6 @@ public class FireBulletOnActivate : MonoBehaviour
         grabbable.activated.AddListener(FireBullet);
         
         ammoCountText.text = ammoCount.ToString();
-        hapticInteractable = GetComponent<HapticInteractable>();
     }
 
     // Update is called once per frame
@@ -34,17 +33,22 @@ public class FireBulletOnActivate : MonoBehaviour
     {
         if (ammoCount > 0)
         {
-            GameObject spawnedBullet = Instantiate(bullet);
-            spawnedBullet.transform.position = spawnPoint.position;
-            spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
+            // GameObject spawnedBullet = Instantiate(bullet);
+            // spawnedBullet.transform.position = spawnPoint.position;
+            // spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
+            // Destroy(spawnedBullet, 5f);
+            RaycastHit hit;
+            if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out hit))
+            {
+                Debug.Log(hit.transform.name);
+            }
+            muzzleFlash.Play();
             ammoCount--;
             ammoCountText.text = ammoCount.ToString();
-            Destroy(spawnedBullet, 5f);
         }
         else
         {
-            if(hapticInteractable.enabled)
-                GetComponent<HapticInteractable>().enabled = false;
+            //Disable Haptic
         }
     }
 }
