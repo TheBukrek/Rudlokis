@@ -12,6 +12,7 @@ public class FireBulletOnActivate : MonoBehaviour
     public int ammoCount;
     public TextMeshProUGUI ammoCountText;
     public ParticleSystem muzzleFlash;
+    public ParticleSystem bulletHitEffect;
 
 
     // Start is called before the first frame update
@@ -41,6 +42,9 @@ public class FireBulletOnActivate : MonoBehaviour
             if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out hit))
             {
                 Debug.Log(hit.transform.name);
+                bulletHitEffect.transform.position = hit.point;
+                bulletHitEffect.transform.forward = hit.normal;
+                bulletHitEffect.Play();
             }
             muzzleFlash.Play();
             ammoCount--;
