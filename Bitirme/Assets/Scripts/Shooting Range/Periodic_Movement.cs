@@ -1,41 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Periodic_Movement : MonoBehaviour
 {
     public float speed = 0.0f;
     float movement;
-    bool active = false;
     float direction = 1.0f;
-
-    // Update is called once per frame
+    public GameObject obj;
+    XRSimpleInteractable grabbable;
+    bool updateFlag = false;
+    void Start()
+    {
+        grabbable = GetComponentInChildren<XRSimpleInteractable>();
+    }
     void Update()
     {
-        if (transform.position.z > 3.0f)
-        {
-            direction = -1.0f;
-        }
-        else if (transform.position.z < -3.0f)
-        {
-            direction = 1.0f;
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            if (speed == 1.0f)
+        if(updateFlag){
+            if (obj.transform.position.z > 3.0f)
             {
-                speed = 0.0f;
-                active = false;
+                direction = -1.0f;
             }
-            else
+            else if (obj.transform.position.z < -3.0f)
             {
-                speed = 1.0f;
-                active = true;
+                direction = 1.0f;
             }
+                obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, speed*direction*Time.deltaTime + obj.transform.position.z);
         }
-        if (active)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, speed*direction*Time.deltaTime + transform.position.z);
-        }
+    }
+    // Update is called once per frame
+    public void MoveShootingTargets(GameObject obj)
+    {
+        updateFlag = !updateFlag;
     }
 }
