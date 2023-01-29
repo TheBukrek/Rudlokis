@@ -599,7 +599,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Continous Turn
+    - m_Text: Continuous Turn
       m_Image: {fileID: 0}
     - m_Text: Snap Turn
       m_Image: {fileID: 0}
@@ -608,7 +608,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 478442443040739121}
         m_TargetAssemblyTypeName: SetTurnType, Assembly-CSharp
-        m_MethodName: SetTurnTypeAsIndex
+        m_MethodName: SetTurnTypeFromIndex
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1586,7 +1586,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 6555318054749959763, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   head: {fileID: 0}
-  spawnDistance: 2.41
+  spawnDistance: 1
 --- !u!1 &8163094809724298495
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class SetTurnType : MonoBehaviour
     public ActionBasedSnapTurnProvider snapTurn;
 
 
-    public void SetTurnTypeAsIndex(int index)
+    public void SetTurnTypeFromIndex(int index)
     {   
         if( index == 0 )
         {
