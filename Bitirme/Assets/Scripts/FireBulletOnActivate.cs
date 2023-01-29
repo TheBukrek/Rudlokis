@@ -14,7 +14,6 @@ public class FireBulletOnActivate : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public ParticleSystem bulletHitEffect;
 
-
     // Start is called before the first frame update
     void Start()
     {
