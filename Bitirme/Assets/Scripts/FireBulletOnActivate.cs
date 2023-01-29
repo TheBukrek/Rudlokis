@@ -20,6 +20,7 @@ public class FireBulletOnActivate : MonoBehaviour
     {
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
         grabbable.activated.AddListener(FireBullet);
+        grabbable.
         
         ammoCountText.text = ammoCount.ToString();
     }
@@ -54,5 +55,10 @@ public class FireBulletOnActivate : MonoBehaviour
         {
             //Disable Haptic
         }
+    }
+    
+    public void Reload()
+    {
+        
     }
 }
