@@ -20,8 +20,6 @@ public class FireBulletOnActivate : MonoBehaviour
     {
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
         grabbable.activated.AddListener(FireBullet);
-        grabbable.
-        
         ammoCountText.text = ammoCount.ToString();
     }
 
