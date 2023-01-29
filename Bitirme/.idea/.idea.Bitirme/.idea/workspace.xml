@@ -8,6 +8,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GrabHandPose.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HandData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/XROffsetGrabInteractable.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -87,7 +89,8 @@
       <workItem from="1674556818053" duration="4599000" />
       <workItem from="1674726664200" duration="6284000" />
       <workItem from="1674819902836" duration="834000" />
-      <workItem from="1674823833314" duration="1777000" />
+      <workItem from="1674823833314" duration="6807000" />
+      <workItem from="1674986242851" duration="1139000" />
     </task>
     <servers />
   </component>
