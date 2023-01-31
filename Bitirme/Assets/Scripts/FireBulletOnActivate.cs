@@ -23,6 +23,7 @@ public class FireBulletOnActivate : MonoBehaviour
     {
         currentAmmo = ammoCount;
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
+
         grabbable.activated.AddListener(FireBullet);
         ammoCountText.text = ammoCount.ToString();
     }
@@ -47,7 +48,14 @@ public class FireBulletOnActivate : MonoBehaviour
                 Debug.Log(hit.transform.name);
                 bulletHitEffect.transform.position = hit.point;
                 bulletHitEffect.transform.forward = hit.normal;
+                if (hit.transform.tag == "Enemy")
+                {
+                    EnemyScript enemy = hit.transform.GetComponent<EnemyScript>();
+                    enemy.Health -= 20;
+                    
+                }
                 bulletHitEffect.Play();
+
             }
             muzzleFlash.Play();
             currentAmmo--;
