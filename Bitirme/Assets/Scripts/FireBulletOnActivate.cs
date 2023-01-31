@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class FireBulletOnActivate : MonoBehaviour
@@ -10,13 +11,17 @@ public class FireBulletOnActivate : MonoBehaviour
     public Transform spawnPoint;
     public float fireSpeed;
     public int ammoCount;
+    public int currentAmmo;
     public TextMeshProUGUI ammoCountText;
     public ParticleSystem muzzleFlash;
     public ParticleSystem bulletHitEffect;
 
+    public InputActionProperty inputReference;
+
     // Start is called before the first frame update
     void Start()
     {
+        currentAmmo = ammoCount;
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
         grabbable.activated.AddListener(FireBullet);
         ammoCountText.text = ammoCount.ToString();
@@ -25,7 +30,7 @@ public class FireBulletOnActivate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (inputReference.action.WasPressedThisFrame()) Reload();
     }
 
     public void FireBullet(ActivateEventArgs args)
@@ -45,8 +50,8 @@ public class FireBulletOnActivate : MonoBehaviour
                 bulletHitEffect.Play();
             }
             muzzleFlash.Play();
-            ammoCount--;
-            ammoCountText.text = ammoCount.ToString();
+            currentAmmo--;
+            ammoCountText.text = currentAmmo.ToString();
         }
         else
         {
@@ -56,6 +61,7 @@ public class FireBulletOnActivate : MonoBehaviour
     
     public void Reload()
     {
-        
+        currentAmmo = ammoCount;
+        ammoCountText.text = currentAmmo.ToString();
     }
 }

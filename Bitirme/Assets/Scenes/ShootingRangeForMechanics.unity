@@ -424,6 +424,26 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 994940817, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+      propertyPath: inputReference
+      value: 
+      objectReference: {fileID: -7479308135824070112, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 994940817, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+      propertyPath: inputReference.m_Reference
+      value: 
+      objectReference: {fileID: -7479308135824070112, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 994940817, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+      propertyPath: inputReference.m_Action.m_Id
+      value: 36d913b7-ae0b-4227-9dee-7f03120ecd20
+      objectReference: {fileID: 0}
+    - target: {fileID: 994940817, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+      propertyPath: inputReference.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 994940817, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+      propertyPath: inputReference.m_Action.m_Name
+      value: Input Reference
+      objectReference: {fileID: 0}
     - target: {fileID: 109434733310796032, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9964705

@@ -10,6 +10,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GrabHandPose.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HandData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PistolFireAnimationScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/XROffsetGrabInteractable.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -90,7 +91,9 @@
       <workItem from="1674726664200" duration="6284000" />
       <workItem from="1674819902836" duration="834000" />
       <workItem from="1674823833314" duration="6807000" />
-      <workItem from="1674986242851" duration="4389000" />
+      <workItem from="1674986242851" duration="5746000" />
+      <workItem from="1675018200179" duration="3525000" />
+      <workItem from="1675165028781" duration="4416000" />
     </task>
     <servers />
   </component>
