@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    public int Health;
+    public float health;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +14,19 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Health <= 0)
+    }
+
+    public void Damage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
         {
-            Destroy(gameObject);
+            Kill();
         }
+    }
+
+    public void Kill()
+    {
+        Destroy(gameObject);
     }
 }

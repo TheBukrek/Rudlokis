@@ -12,11 +12,15 @@ public class FireBulletOnActivate : MonoBehaviour
     public float fireSpeed;
     public int ammoCount;
     public int currentAmmo;
+    public float damage;
     public TextMeshProUGUI ammoCountText;
     public ParticleSystem muzzleFlash;
     public ParticleSystem bulletHitEffect;
 
-    public InputActionProperty inputReference;
+    public InputActionReference leftReload;
+    public InputActionReference rightReload;
+
+    HandData holdingHand;
 
     // Start is called before the first frame update
     void Start()
@@ -25,18 +29,14 @@ public class FireBulletOnActivate : MonoBehaviour
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
 
         grabbable.activated.AddListener(FireBullet);
+        grabbable.selectEntered.AddListener(SetHand);
+        grabbable.selectExited.AddListener(UnsetHand);
         ammoCountText.text = ammoCount.ToString();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (inputReference.action.WasPressedThisFrame()) Reload();
     }
 
     public void FireBullet(ActivateEventArgs args)
     {
-        if (ammoCount > 0)
+        if (currentAmmo > 0)
         {
             // GameObject spawnedBullet = Instantiate(bullet);
             // spawnedBullet.transform.position = spawnPoint.position;
@@ -48,10 +48,10 @@ public class FireBulletOnActivate : MonoBehaviour
                 Debug.Log(hit.transform.name);
                 bulletHitEffect.transform.position = hit.point;
                 bulletHitEffect.transform.forward = hit.normal;
-                if (hit.transform.tag == "Enemy")
+                if (hit.transform.CompareTag("Enemy"))
                 {
                     EnemyScript enemy = hit.transform.GetComponent<EnemyScript>();
-                    enemy.Health -= 20;
+                    enemy.Damage(damage);
                     
                 }
                 bulletHitEffect.Play();
@@ -67,9 +67,44 @@ public class FireBulletOnActivate : MonoBehaviour
         }
     }
     
-    public void Reload()
+    public void Reload(InputAction.CallbackContext context)
     {
         currentAmmo = ammoCount;
         ammoCountText.text = currentAmmo.ToString();
     }
+
+    public void SetHand(BaseInteractionEventArgs args)
+    {
+        if (args.interactorObject is XRDirectInteractor)
+        {
+            HandData handData = args.interactorObject.transform.GetComponentInChildren<HandData>();
+
+            if (handData.handType == HandData.HandModelType.Right)
+            {
+                rightReload.action.started += Reload;
+            }
+            else
+            {
+                leftReload.action.started += Reload;
+            }
+        }
+    }
+    
+    public void UnsetHand(BaseInteractionEventArgs args)
+    {
+        if (args.interactorObject is XRDirectInteractor)
+        {
+            HandData handData = args.interactorObject.transform.GetComponentInChildren<HandData>();
+
+            if (handData.handType == HandData.HandModelType.Right)
+            {
+                rightReload.action.started -= Reload;
+            }
+            else
+            {
+                leftReload.action.started -= Reload;
+            }
+        }
+    }
+    
 }
