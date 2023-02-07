@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    public int Health;
+    public float health;
     // Start is called before the first frame update
     Animator animator;
     
@@ -31,7 +31,7 @@ public class EnemyScript : MonoBehaviour
     {
     
         //Enemy Health
-        if (Health <= 0)
+        if (health <= 0)
         {   
             
            
@@ -66,5 +66,15 @@ public class EnemyScript : MonoBehaviour
                 }
             }
         }
+    }
+    public void Damage(float damage)
+    {
+        Debug.Log("asdasfa");
+        health -= damage;
+        
+    }
+    public void Kill()
+    {
+        Destroy(gameObject);
     }
 }

@@ -396,23 +396,14 @@ MonoBehaviour:
   bullet: {fileID: 7367096669260372379, guid: 8535affee00eb1644b63fd6816d3907b, type: 3}
   spawnPoint: {fileID: 1868707905}
   fireSpeed: 20
-  ammoCount: 999999
+  ammoCount: 12
   currentAmmo: 0
+  damage: 20
   ammoCountText: {fileID: 1593212625}
   muzzleFlash: {fileID: 208488776}
   bulletHitEffect: {fileID: 5307049444064065503}
-  inputReference:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Input Reference
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 36d913b7-ae0b-4227-9dee-7f03120ecd20
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -7479308135824070112, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  leftReload: {fileID: -7479308135824070112, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightReload: {fileID: -8899104054584623456, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &6766117561449019485
 MonoBehaviour:
   m_ObjectHideFlags: 0

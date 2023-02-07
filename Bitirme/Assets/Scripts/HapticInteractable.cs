@@ -17,7 +17,7 @@ public class Haptic
 
         if (eventArgs.interactorObject is XRBaseControllerInteractor controllerInteractor)
         {
-            Debug.Log("haptic");
+            
             TriggerHaptic(controllerInteractor.xrController);
         }
     }

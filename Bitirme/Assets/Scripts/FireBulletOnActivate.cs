@@ -50,7 +50,9 @@ public class FireBulletOnActivate : MonoBehaviour
                 bulletHitEffect.transform.forward = hit.normal;
                 if (hit.transform.CompareTag("Enemy"))
                 {
+                    
                     EnemyScript enemy = hit.transform.GetComponent<EnemyScript>();
+                    //enemy.health-=20f;
                     enemy.Damage(damage);
                     
                 }
