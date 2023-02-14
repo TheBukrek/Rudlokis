@@ -69,7 +69,7 @@ public class EnemyScript : MonoBehaviour
     }
     public void Damage(float damage)
     {
-        Debug.Log("asdasfa");
+        
         health -= damage;
         
     }
