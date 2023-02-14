@@ -17,7 +17,7 @@ public class HealthIndicator : MonoBehaviour
         health += amount;
         if(health > MAX_HEALTH)
         {
-            Debug.Log("Health is full (overheal)");
+            
             health = MAX_HEALTH;
         }
         
@@ -27,7 +27,7 @@ public class HealthIndicator : MonoBehaviour
         health += regen*deltaTime;
         if(health > MAX_HEALTH)
         {
-            Debug.Log("Health is full (overheal)");
+            
             health = MAX_HEALTH;
         }
         
@@ -41,11 +41,11 @@ public class HealthIndicator : MonoBehaviour
 
     private void UpdateHealth()
     {
-        Debug.Log("Update Health: " + health);
+        
         int segmentCount = Segments.Length;
-        Debug.Log("Segment Count: " + segmentCount);
+        
         float segmentHealth = MAX_HEALTH / segmentCount;
-        Debug.Log("Segment Health: " + segmentHealth);
+        
 
         for (int i = 0; i < transform.childCount; i++)
         {
