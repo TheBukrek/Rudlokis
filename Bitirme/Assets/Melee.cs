@@ -7,10 +7,28 @@ public class Melee : MonoBehaviour
     Rigidbody rd;
     Vector3 previousPosition;
     float velocity;
+
+    public float swingAmountRequired = 1;
+    public float swingAmountCurrent  = 0;
+    public float swingAmountMinimumVelocity = 1;
+
+    public Transform spawnPoint;
+    public Vector3 midVector;
+    public Vector3 midPoint;
+    public Vector3 startPoint;
+    public Vector3 swingStartVector;
+
+    public GameObject projectilePrefab;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         rd = GetComponent<Rigidbody>();
+        velocity = ((transform.position - previousPosition).magnitude) / Time.deltaTime;
+        previousPosition = transform.position;
+
     }
 
     // Update is called once per frame
@@ -19,6 +37,39 @@ public class Melee : MonoBehaviour
         
         velocity = ((transform.position - previousPosition).magnitude) / Time.deltaTime;
         previousPosition = transform.position;
+
+
+        if (velocity >= swingAmountMinimumVelocity)
+        {
+
+            if (swingAmountCurrent == 0) {
+                //Debug.Log("Swing Started");
+                swingStartVector = spawnPoint.forward;
+
+                startPoint = spawnPoint.position;
+
+            }
+
+            swingAmountCurrent += Time.deltaTime * velocity;
+
+            if (swingAmountCurrent >= swingAmountRequired) {
+                Debug.Log("Projectile throw");
+
+                midVector = (spawnPoint.forward.normalized + swingStartVector.normalized).normalized;
+
+                midPoint = (spawnPoint.position + startPoint)/2;
+                swingAmountCurrent = 0f;
+
+                GameObject newProjectile = Instantiate<GameObject>(projectilePrefab, midPoint, Quaternion.identity) ;
+                newProjectile.GetComponent<SwordProjectile>().direction = midVector;  
+                
+            }
+
+        }
+        else {
+            //Debug.Log("Swing cancelled");
+            swingAmountCurrent = 0f;
+        }
         
     }
 
