@@ -82,7 +82,7 @@ public class Melee : MonoBehaviour
                 Vector3 proj = Vector3.Project(spawnPoint.forward, swingStartVector);
                 
                 
-                Debug.Log(" angle  " + angle);
+                
 
 
 
