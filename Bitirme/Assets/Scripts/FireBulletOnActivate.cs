@@ -16,7 +16,7 @@ public class FireBulletOnActivate : MonoBehaviour
     public TextMeshProUGUI ammoCountText;
     public ParticleSystem muzzleFlash;
     public ParticleSystem bulletHitEffect;
-
+    public AudioSource shootingSound;
     public InputActionReference leftReload;
     public InputActionReference rightReload;
 
@@ -27,7 +27,7 @@ public class FireBulletOnActivate : MonoBehaviour
     {
         currentAmmo = ammoCount;
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
-
+        shootingSound = GetComponent<AudioSource>();
         grabbable.activated.AddListener(FireBullet);
         grabbable.selectEntered.AddListener(SetHand);
         grabbable.selectExited.AddListener(UnsetHand);
@@ -48,6 +48,7 @@ public class FireBulletOnActivate : MonoBehaviour
                 Debug.Log(hit.transform.name);
                 bulletHitEffect.transform.position = hit.point;
                 bulletHitEffect.transform.forward = hit.normal;
+                shootingSound.Play();
                 if (hit.transform.CompareTag("Enemy"))
                 {
                     
