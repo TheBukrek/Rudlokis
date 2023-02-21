@@ -6,8 +6,11 @@ public class SwordProjectile : MonoBehaviour
 {   
 
     [Range(0,10)]
+    public Transform target;
     public float speed = 0.3f;
-    public Vector3 direction;
+    
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,10 @@ public class SwordProjectile : MonoBehaviour
     void Update()
     {
 
-        transform.LookAt(transform.position + direction);
+        
+
+
+        //transform.LookAt(target);
         transform.position = transform.position + transform.forward * speed * Time.deltaTime;
     }
 }
