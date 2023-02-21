@@ -66,7 +66,6 @@ public class Melee : MonoBehaviour
             swingAmountCurrent += Time.deltaTime * velocity;
 
             if (swingAmountCurrent >= swingAmountRequired) {
-                Debug.Log("Projectile throw");
 
                 midVector = (spawnPoint.forward.normalized + swingStartVector.normalized).normalized;
                 endRotation = spawnPoint.eulerAngles;
