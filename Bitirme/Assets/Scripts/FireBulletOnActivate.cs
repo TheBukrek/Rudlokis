@@ -19,6 +19,7 @@ public class FireBulletOnActivate : MonoBehaviour
     public AudioSource shootingSound;
     public InputActionReference leftReload;
     public InputActionReference rightReload;
+    private Bucket<bool> bucket;
 
     HandData holdingHand;
 
@@ -32,12 +33,18 @@ public class FireBulletOnActivate : MonoBehaviour
         grabbable.selectEntered.AddListener(SetHand);
         grabbable.selectExited.AddListener(UnsetHand);
         ammoCountText.text = ammoCount.ToString();
+        bucket = new Bucket<bool>(new List<bool>{true,true,false});
     }
 
     public void FireBullet(ActivateEventArgs args)
     {
         if (currentAmmo > 0)
         {
+            // foreach (var x in bucket.Add(false))
+            // {
+            //     Debug.Log(x);
+            // }
+            Debug.Log(bucket.Pick());
             // GameObject spawnedBullet = Instantiate(bullet);
             // spawnedBullet.transform.position = spawnPoint.position;
             // spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
@@ -45,7 +52,6 @@ public class FireBulletOnActivate : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(spawnPoint.position, spawnPoint.forward, out hit))
             {
-                Debug.Log(hit.transform.name);
                 bulletHitEffect.transform.position = hit.point;
                 bulletHitEffect.transform.forward = hit.normal;
                 shootingSound.Play();
