@@ -58,6 +58,7 @@ public class EnemyScript : MonoBehaviour
                         GetComponent<AudioSource>().Play();
                     }
                     animator.SetTrigger("attack");
+
                     timeToAttack = 1f / attackSpeed;
                 }else{
                     timeToAttack -= Time.deltaTime;
