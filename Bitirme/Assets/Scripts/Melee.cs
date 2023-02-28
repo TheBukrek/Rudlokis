@@ -86,7 +86,7 @@ public class Melee : MonoBehaviour
 
 
                 GameObject newProjectile = Instantiate<GameObject>(projectilePrefab, midPoint, Quaternion.Euler(endRotation)) ;
-                newProjectile.GetComponent<SwordProjectile>().target = getClosestEnemy();
+                newProjectile.GetComponent<SwordProjectile>().speed = Math.Min(6, velocity * 2);
 
 
 
