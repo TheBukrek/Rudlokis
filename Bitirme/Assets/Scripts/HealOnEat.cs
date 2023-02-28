@@ -6,7 +6,7 @@ public class HealOnEat : MonoBehaviour
 {
     public float healAmount = 10f;
 
-    //public HealthIndicator healthIndicator;
+    public HealthIndicator healthIndicator;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,20 +19,14 @@ public class HealOnEat : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.CompareTag("Mouth"))
-        {
-            Debug.Log("yedin");
-            //healthIndicator.Heal(healAmount);
-        }
-    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("Mouth"))
         {
             Debug.Log("yedin");
-            //healthIndicator.Heal(healAmount);
+            healthIndicator.Heal(healAmount);
+            Destroy(gameObject);
         }
     }
 }
