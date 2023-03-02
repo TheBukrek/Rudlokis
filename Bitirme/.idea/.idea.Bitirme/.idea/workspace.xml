@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GrabHandPose.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HandData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PistolFireAnimationScript.cs" root0="FORCE_HIGHLIGHTING" />
@@ -95,6 +96,7 @@
       <workItem from="1675018200179" duration="3525000" />
       <workItem from="1675165028781" duration="4416000" />
       <workItem from="1675332163831" duration="625000" />
+      <workItem from="1677764283463" duration="650000" />
     </task>
     <servers />
   </component>
