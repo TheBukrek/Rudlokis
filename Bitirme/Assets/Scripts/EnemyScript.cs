@@ -70,10 +70,10 @@ public class EnemyScript : MonoBehaviour
     public void Damage(float damage)
     {
         health -= damage;
-        if(!GetComponent<AudioSource>().isPlaying){
+        
             GetComponent<AudioSource>().clip = hitSounds[Random.Range(0, attackSounds.Length-1)];
             GetComponent<AudioSource>().Play();
-        }
+        
     }
 
     public void Kill()
