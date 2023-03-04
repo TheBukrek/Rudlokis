@@ -11,7 +11,7 @@ public class SocketPositioner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = origin.transform.rotation * (origin.transform.position + offSet);
+        transform.position = Quaternion.Euler(0, origin.transform.rotation.y, 0) * (origin.transform.position + offSet);
     }
 
     private void OnDrawGizmos()
