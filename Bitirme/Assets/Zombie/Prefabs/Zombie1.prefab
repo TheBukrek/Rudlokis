@@ -3276,6 +3276,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 578376449398627443}
     m_Modifications:
+    - target: {fileID: 17507482855615466, guid: 9630404b74613e34f930ebfaac2ec6d1, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0643816
+      objectReference: {fileID: 0}
+    - target: {fileID: 17507482855615466, guid: 9630404b74613e34f930ebfaac2ec6d1, type: 3}
+      propertyPath: m_Center.y
+      value: -0.5321914
+      objectReference: {fileID: 0}
     - target: {fileID: 696916028944729985, guid: 9630404b74613e34f930ebfaac2ec6d1, type: 3}
       propertyPath: m_Name
       value: DamageBox
@@ -3342,6 +3350,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 578376449398627443}
     m_Modifications:
+    - target: {fileID: 17507482855615466, guid: 9630404b74613e34f930ebfaac2ec6d1, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0001516
+      objectReference: {fileID: 0}
+    - target: {fileID: 17507482855615466, guid: 9630404b74613e34f930ebfaac2ec6d1, type: 3}
+      propertyPath: m_Center.y
+      value: -0.5000761
+      objectReference: {fileID: 0}
     - target: {fileID: 696916028944729985, guid: 9630404b74613e34f930ebfaac2ec6d1, type: 3}
       propertyPath: m_Name
       value: DamageBox2
