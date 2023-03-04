@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthIndicator : MonoBehaviour
 {
+    public Material[] healthMaterials = new Material[3];
     [Range(0, 100)]
     public float MAX_HEALTH = 100;
     public float health =0;
@@ -47,16 +48,30 @@ public class HealthIndicator : MonoBehaviour
     {
         
         int segmentCount = Segments.Length;
-        
+        int segmentPercentage = (int)health%10;
         float segmentHealth = MAX_HEALTH / segmentCount;
-        
-
+        int lastActiveChildIndex = (int)((health/10) -1);
+        GameObject lastActiveChild = transform.GetChild(lastActiveChildIndex).gameObject;
+        if (segmentPercentage==0||segmentPercentage==9||segmentPercentage==8||segmentPercentage==7)
+        {
+            lastActiveChild.GetComponent<Renderer>().material = healthMaterials[0];
+        }
+        else if (segmentPercentage==6||segmentPercentage==5||segmentPercentage==4)
+        {
+            lastActiveChild.GetComponent<Renderer>().material = healthMaterials[1];
+        }
+        else if (segmentPercentage==3||segmentPercentage==2||segmentPercentage==1)
+        {
+            lastActiveChild.GetComponent<Renderer>().material = healthMaterials[2];
+        }
         for (int i = 0; i < transform.childCount; i++)
         {
-
+            
             GameObject child = transform.GetChild(i).gameObject;
+            
             if((i+1)*segmentHealth < health)
             {
+
                 child.SetActive(true);
             }
             else

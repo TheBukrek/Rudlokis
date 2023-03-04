@@ -54,6 +54,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e7dad910c1d13e46974be1dbf38d581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthMaterials:
+  - {fileID: 2100000, guid: c25f902c88449de45894734215481ecf, type: 2}
+  - {fileID: 2100000, guid: 03538933a39d8db4cae80cf2a9f2abbc, type: 2}
+  - {fileID: 2100000, guid: ed0c9ac80e3c5424881d6acded4030ce, type: 2}
   MAX_HEALTH: 100
   health: 100
   regen: 0.1
