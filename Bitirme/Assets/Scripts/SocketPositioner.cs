@@ -11,7 +11,7 @@ public class SocketPositioner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = origin.transform.position;
+        transform.position = origin.transform.position + offSet;
     }
 
     private void OnDrawGizmos()
