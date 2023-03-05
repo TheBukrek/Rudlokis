@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class HealthIndicator : MonoBehaviour
 {
@@ -33,14 +35,17 @@ public class HealthIndicator : MonoBehaviour
         }
         
     }
+    
 
     public void TakeDamage(float damage)
     {
         
         health -= damage;
-        if (health < 0)
+        if (health <= 0)
         {
             health = 0;
+            SceneManager.LoadScene(0);
+
         }
     }
 
