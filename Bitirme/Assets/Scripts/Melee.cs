@@ -57,7 +57,7 @@ public class Melee : MonoBehaviour
 
             if (swingAmountCurrent == 0) {
                 //Debug.Log("Swing Started");
-                swingStartVector = spawnPoint.forward;
+                swingStartVector = spawnPoint.up;
                 startRotation = spawnPoint.eulerAngles;
                 quaternionList.Add(spawnPoint.rotation);
 
@@ -65,13 +65,14 @@ public class Melee : MonoBehaviour
 
             }
 
-            swingAmountCurrent += Time.deltaTime;
+            swingAmountCurrent += Time.deltaTime * velocity;
 
             if( swingAmountCurrent >= swingAmountRequired / 2 ){
                 if( midRotationAssigned == false){
                     midRotation = spawnPoint.rotation;
                     midPoint = spawnPoint.position;
                     midRotationAssigned = true;
+                    Debug.Log("midRotationAssigned    swing progress: %"+swingAmountCurrent/swingAmountRequired*100);
                 }
                
                 

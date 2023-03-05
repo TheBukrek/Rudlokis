@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class MultiInteractable : XRBaseInteractable
 {
     // Start is called before the first frame update
+    [System.Obsolete]
     void Start()
     {
         XRBaseInteractor interactor = selectingInteractor;

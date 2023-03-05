@@ -14,7 +14,10 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
     public Transform leftAttachTransform;
     public Transform rightAttachTransform;
 
+    public enum TwoHandRotationType {None, First, Second };
+    public TwoHandRotationType rotationType;
 
+    [System.Obsolete]
     void Start()
     {
         foreach(var item in secondInt)
@@ -23,14 +26,62 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
             item.onSelectExited.AddListener(OnSecondHandRelease);
         }
     }
+
+    /*protected override void OnSelectEntered(SelectEnterEventArgs args)
+    {
+        if (args.interactorObject.transform.CompareTag("Left Hand"))
+        {
+            attachTransform = leftAttachTransform;
+        }
+        else if (args.interactorObject.transform.CompareTag("Right Hand"))
+        {
+            attachTransform = rightAttachTransform;
+        }
+        base.OnSelectEntered(args);
+    }*/
+
+    protected override void OnSelectEntering(SelectEnterEventArgs args)
+    {
+        if (args.interactorObject.transform.CompareTag("Left Hand"))
+        {   
+            attachTransform = leftAttachTransform;
+            
+        }
+        else if (args.interactorObject.transform.CompareTag("Right Hand"))
+        {
+            attachTransform = rightAttachTransform;
+        }
+        base.OnSelectEntering(args);
+    }
+
+    [System.Obsolete]
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
     {   
         if(secondInteractor && selectingInteractor)
         {
-            selectingInteractor.attachTransform.rotation = Quaternion.LookRotation(secondInteractor.attachTransform.position - selectingInteractor.attachTransform.position);
+            selectingInteractor.attachTransform.rotation = GetTwoHandRotation();
 
         }
         base.ProcessInteractable(updatePhase);
+    }
+
+    [System.Obsolete]
+    public Quaternion GetTwoHandRotation()
+    {
+        Quaternion targetRot = new Quaternion();
+        if (rotationType==TwoHandRotationType.None)
+        {
+            targetRot = Quaternion.LookRotation(secondInteractor.attachTransform.position - selectingInteractor.attachTransform.position);
+        }
+        else if (rotationType == TwoHandRotationType.First)
+        {
+            targetRot = Quaternion.LookRotation(secondInteractor.attachTransform.position - selectingInteractor.attachTransform.position, selectingInteractor.attachTransform.up);
+        }
+        else if (rotationType == TwoHandRotationType.Second)
+        {
+            targetRot = Quaternion.LookRotation(secondInteractor.attachTransform.position - selectingInteractor.attachTransform.position, secondInteractor.attachTransform.up);
+        }
+        return targetRot;
     }
     public void OnSecondHandGrab(XRBaseInteractor interactor)
     {
@@ -44,6 +95,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
         secondInteractor = null;
     }
 
+    [System.Obsolete]
     protected override void OnSelectEntered(XRBaseInteractor interactor)
     {
         Debug.Log("first grab");
@@ -52,20 +104,9 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
         attachinitial = interactor.attachTransform.localRotation;
 
     }
-    protected override void OnSelectEntered(SelectEnterEventArgs args)
-    {
+    
 
-        if (args.interactorObject.transform.CompareTag("Left Hand"))
-        {
-            attachTransform = leftAttachTransform;
-        }
-        else if (args.interactorObject.transform.CompareTag("Right Hand"))
-        {
-            attachTransform = rightAttachTransform;
-        }
-        base.OnSelectEntered(args);
-    }
-
+    [System.Obsolete]
     protected override void OnSelectExited(XRBaseInteractor interactor)
     {
         Debug.Log("firts rel");
@@ -73,6 +114,8 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
         secondInteractor = null;
         interactor.attachTransform.localRotation = attachinitial;
     }
+
+    [System.Obsolete]
     public override bool IsSelectableBy(XRBaseInteractor interactor)
     {
         bool isalreadygrabed = selectingInteractor && !interactor.Equals(selectingInteractor);
