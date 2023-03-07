@@ -29,6 +29,8 @@ public class FireBulletOnActivate : MonoBehaviour
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
         shootingSound = GetComponent<AudioSource>();
         grabbable.activated.AddListener(FireBullet);
+    
+        
         grabbable.selectEntered.AddListener(SetHand);
         grabbable.selectExited.AddListener(UnsetHand);
         ammoCountText.text = ammoCount.ToString();

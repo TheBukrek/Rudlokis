@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEditor;
 #endif
 
-public class GrabHandPose : MonoBehaviour
+public class GrabHandPoseForSimpleIntreractable : MonoBehaviour
 {
     public float poseTransitionDuration;
     
@@ -25,12 +25,12 @@ public class GrabHandPose : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        XRGrabInteractable grabInteractable = GetComponent<XRGrabInteractable>();
+        XRSimpleInteractable simpleInteractable = GetComponent<XRSimpleInteractable>();
 
+
+        simpleInteractable.selectEntered.AddListener(SetupPose);
+        simpleInteractable.selectExited.AddListener(UnsetPose);
         
-        
-        grabInteractable.selectEntered.AddListener(SetupPose);
-        grabInteractable.selectExited.AddListener(UnsetPose);
         
         rightHandPose.gameObject.SetActive(false);
         leftHandPose.gameObject.SetActive(false);
@@ -131,31 +131,4 @@ public class GrabHandPose : MonoBehaviour
         }
     }
 
-#if UNITY_EDITOR
-    [MenuItem("Tools/Mirror Selected Right Grab Pose")]
-    public static void MirrorRightPose()
-    {
-        Debug.Log("MIRROR RIGHT POSE");
-        GrabHandPose handPose = Selection.activeGameObject.GetComponent<GrabHandPose>();
-        handPose.MirrorPose(handPose.leftHandPose, handPose.rightHandPose);
-    }
-#endif    
-
-    public void MirrorPose(HandData poseToMirror, HandData poseUsedToMirror)
-    {
-        Vector3 mirroredPosition = poseUsedToMirror.root.localPosition;
-        mirroredPosition.x *= -1;
-
-        Quaternion mirroredQuaternion = poseUsedToMirror.root.localRotation;
-        mirroredQuaternion.y *= -1;
-        mirroredQuaternion.z *= -1;
-
-        poseToMirror.root.localPosition = mirroredPosition;
-        poseToMirror.root.localRotation = mirroredQuaternion;
-
-        for (int i = 0; i < poseUsedToMirror.fingerBones.Length; i++)
-        {
-            poseToMirror.fingerBones[i].localRotation = poseUsedToMirror.fingerBones[i].localRotation;
-        }
-    }
 }

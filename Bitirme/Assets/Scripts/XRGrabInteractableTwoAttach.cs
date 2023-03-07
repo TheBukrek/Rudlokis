@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,18 +15,25 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
     public Transform leftAttachTransform;
     public Transform rightAttachTransform;
 
+    public Transform leftAttachTransformSecond;
+    public Transform rightAttachTransformSecond;
+
     public enum TwoHandRotationType {None, First, Second };
     public TwoHandRotationType rotationType;
 
-    [System.Obsolete]
+    
     void Start()
     {
         foreach(var item in secondInt)
         {
             item.onSelectEntered.AddListener(OnSecondHandGrab);
+
+            
             item.onSelectExited.AddListener(OnSecondHandRelease);
         }
     }
+
+    
 
     /*protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
@@ -54,7 +62,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
         base.OnSelectEntering(args);
     }
 
-    [System.Obsolete]
+    
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
     {   
         if(secondInteractor && selectingInteractor)
@@ -65,7 +73,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
         base.ProcessInteractable(updatePhase);
     }
 
-    [System.Obsolete]
+    
     public Quaternion GetTwoHandRotation()
     {
         Quaternion targetRot = new Quaternion();
@@ -85,8 +93,35 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
     }
     public void OnSecondHandGrab(XRBaseInteractor interactor)
     {
-        Debug.Log("second grab");
+
+        
         secondInteractor = interactor;
+        //secondInteractor.attachTransform.position = new Vector3(0, 0.5f, 0) + secondInteractor.attachTransform.position;
+        if (secondInteractor.transform.CompareTag("Left Hand"))
+        {
+            Debug.Log("second grab Left");
+            //secondInteractor.attachTransform = leftAttachTransformSecond;
+
+        }
+        else if (secondInteractor.transform.CompareTag("Right Hand"))
+        {
+            //secondInteractor.attachTransform = rightAttachTransformSecond;
+        }
+        
+    }
+
+    protected  void OnSelectEnteredSecondHand(SelectEnterEventArgs args)
+    {
+
+        if (args.interactorObject.transform.CompareTag("Left Hand"))
+        {
+            attachTransform = leftAttachTransformSecond;
+        }
+        else if (args.interactorObject.transform.CompareTag("Right Hand"))
+        {
+            attachTransform = rightAttachTransformSecond;
+        }
+        base.OnSelectEntered(args);
     }
 
     public void OnSecondHandRelease(XRBaseInteractor interactor)
@@ -95,7 +130,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
         secondInteractor = null;
     }
 
-    [System.Obsolete]
+    
     protected override void OnSelectEntered(XRBaseInteractor interactor)
     {
         Debug.Log("first grab");
@@ -106,7 +141,6 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
     }
     
 
-    [System.Obsolete]
     protected override void OnSelectExited(XRBaseInteractor interactor)
     {
         Debug.Log("firts rel");
