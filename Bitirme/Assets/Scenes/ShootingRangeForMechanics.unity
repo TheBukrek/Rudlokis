@@ -577,7 +577,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: pistol
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 710284413, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
 --- !u!1 &1007648288 stripped
 GameObject:
@@ -2584,7 +2585,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 106777528, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
 --- !u!1001 &9107765580195193332
 PrefabInstance:

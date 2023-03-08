@@ -44,7 +44,6 @@ public class GrabHandPoseForSimpleIntreractable : MonoBehaviour
     }
     public void SetupPose(BaseInteractionEventArgs arg)
     {
-        Debug.Log("aljdnkaj");
         if (arg.interactorObject is XRDirectInteractor)
         {
             HandData handData = arg.interactorObject.transform.GetComponentInChildren<HandData>();
