@@ -22,7 +22,7 @@ public class FireAutoBulletOnActivate : MonoBehaviour
     public InputActionReference rightReload;
     public bool isFiring=false;
 
-    [Range (1, 10)]
+    [Range (1, 25)]
     public float fireRate;
     private float _timeToFire;
     private float _timeToFireCurrent;
@@ -49,7 +49,7 @@ public class FireAutoBulletOnActivate : MonoBehaviour
 
         // set Fire rate
         _timeToFire = 1 / fireRate;
-        _timeToFireCurrent = 0;
+        _timeToFireCurrent = _timeToFire;
     }
     void Update()
     {

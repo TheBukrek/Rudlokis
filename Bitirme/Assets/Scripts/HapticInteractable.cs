@@ -30,6 +30,15 @@ public class Haptic
         }
     }
 
+    public void TriggerHaptic(XRBaseController controller, float intensity, float duration)
+    {
+        if (intensity > 0)
+        {
+
+            controller.SendHapticImpulse(intensity, duration);
+        }
+    }
+
 }
 public class HapticInteractable : MonoBehaviour
 {
@@ -40,6 +49,8 @@ public class HapticInteractable : MonoBehaviour
     {
         XRBaseInteractable interactable = GetComponent<XRBaseInteractable>();
         interactable.activated.AddListener(hapticOnActive.TriggerHaptic);
+        //interactable..AddListener(hapticOnActive.TriggerHaptic);
+
     }
 
     
