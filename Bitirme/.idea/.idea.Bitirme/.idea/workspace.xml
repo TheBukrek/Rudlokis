@@ -39,6 +39,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/New folder/release\Bitirme.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\onura\Desktop\New folder\release" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\onura\Documents\GitHub\bitirme\Bitirme -debugCodeOptimization" />
@@ -98,7 +106,8 @@
       <workItem from="1675332163831" duration="625000" />
       <workItem from="1677764283463" duration="650000" />
       <workItem from="1678276907254" duration="6505000" />
-      <workItem from="1678291967238" duration="601000" />
+      <workItem from="1678291967238" duration="1351000" />
+      <workItem from="1678298437988" duration="1136000" />
     </task>
     <servers />
   </component>
