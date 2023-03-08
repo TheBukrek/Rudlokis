@@ -6,6 +6,8 @@ using Steamworks;
 public class test : MonoBehaviour
 {
     public string id;
+
+    private int ShotsFired;
     // Start is called before the first frame update
     void Start() {
         if(SteamManager.Initialized) {
@@ -20,9 +22,8 @@ public class test : MonoBehaviour
         if (Input.GetKeyDown("z"))
         {
             bool ach;
-            Debug.Log(Steamworks.SteamUserStats.GetAchievement(id, out ach));
+            Debug.Log(Steamworks.SteamUserStats.GetAchievement("FIRST_SHOT", out ach));
             Debug.Log("User has achievement " + id + ": " + ach);
-            Debug.Log(SteamUserStats.StoreStats());
         }
         if (Input.GetKeyDown("x"))
         {
@@ -35,7 +36,16 @@ public class test : MonoBehaviour
             bool ach;
             Debug.Log(Steamworks.SteamUserStats.ClearAchievement(id));
             Debug.Log("Achievement " + id + " cleared!");
-            Debug.Log(SteamUserStats.StoreStats());
         }
+        if (Input.GetKeyDown("v"))
+        {
+            SteamUserStats.GetStat("2", out ShotsFired);
+            ShotsFired++;
+            SteamUserStats.SetStat("2", ShotsFired);
+            SteamUserStats.StoreStats();
+            Debug.Log(ShotsFired);
+        }
+
+        SteamAPI.RunCallbacks();
     }
 }
