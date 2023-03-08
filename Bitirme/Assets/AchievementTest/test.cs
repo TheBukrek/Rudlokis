@@ -6,10 +6,12 @@ using Steamworks;
 public class test : MonoBehaviour
 {
     public string id;
-
+    public GameObject gameObject;
+    public Vector3 plane;
     private int ShotsFired;
     // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         if(SteamManager.Initialized) {
             SteamUserStats.RequestCurrentStats();
             string name = SteamFriends.GetPersonaName();
@@ -48,5 +50,18 @@ public class test : MonoBehaviour
         }
 
         SteamAPI.RunCallbacks();
+    }
+    
+    private void OnDrawGizmos()
+    {
+        if (gameObject != null)
+        {
+            var pos = gameObject.transform.position;
+            var forward = gameObject.transform.forward;
+            forward.y = 0;
+            Gizmos.color = Color.blue;
+            // Gizmos.DrawLine(pos, pos + Vector3.ProjectOnPlane(gameObject.transform.forward, Vector3.up));
+            Gizmos.DrawLine(pos, pos + forward.normalized);
+        }
     }
 }
