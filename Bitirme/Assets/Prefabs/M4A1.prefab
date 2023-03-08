@@ -736,7 +736,7 @@ GameObject:
   - component: {fileID: 3123075811642066311}
   - component: {fileID: 5584660136511535349}
   m_Layer: 0
-  m_Name: sightattach
+  m_Name: sightAttach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
