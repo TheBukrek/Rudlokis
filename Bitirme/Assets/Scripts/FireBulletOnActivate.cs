@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
+using Steamworks;
 
 public class FireBulletOnActivate : MonoBehaviour
 {
@@ -40,6 +41,12 @@ public class FireBulletOnActivate : MonoBehaviour
     {
         if (currentAmmo > 0)
         {
+            Steamworks.SteamUserStats.GetAchievement("FIRST_SHOT", out bool achievementCompleted);
+            if (!achievementCompleted)
+            {
+                SteamUserStats.SetAchievement("FIRST_SHOT");
+                SteamUserStats.StoreStats();
+            }
             // GameObject spawnedBullet = Instantiate(bullet);
             // spawnedBullet.transform.position = spawnPoint.position;
             // spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
