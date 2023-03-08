@@ -123,7 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< Updated upstream
 --- !u!4 &20080168 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2229855593944969414, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
@@ -145,12 +144,10 @@ GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
-=======
 --- !u!224 &414224845 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7365877639470638420, guid: dc826f13f5ebf2043aa9058918580ce1, type: 3}
   m_PrefabInstance: {fileID: 2140896661}
->>>>>>> Stashed changes
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -787,7 +784,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
-<<<<<<< Updated upstream
 --- !u!1 &1007648288 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1636651459, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
@@ -897,8 +893,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
-=======
->>>>>>> Stashed changes
 --- !u!1001 &1162530971
 PrefabInstance:
   m_ObjectHideFlags: 0
