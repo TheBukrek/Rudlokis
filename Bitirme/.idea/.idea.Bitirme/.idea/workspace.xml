@@ -13,7 +13,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HandData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PistolFireAnimationScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/XROffsetGrabInteractable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/test.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -98,7 +97,8 @@
       <workItem from="1675165028781" duration="4416000" />
       <workItem from="1675332163831" duration="625000" />
       <workItem from="1677764283463" duration="650000" />
-      <workItem from="1678276907254" duration="6414000" />
+      <workItem from="1678276907254" duration="6505000" />
+      <workItem from="1678291967238" duration="601000" />
     </task>
     <servers />
   </component>
