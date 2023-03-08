@@ -41,7 +41,7 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    public GameObject GetPolledZombie(){ 
+    public GameObject GetPooledZombie(){ 
         for(int i = 0; i < poolVolume; i++){
             if(! pool[i].activeInHierarchy){
                 return pool[i];
