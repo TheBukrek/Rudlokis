@@ -39,9 +39,9 @@ public class test : MonoBehaviour
         }
         if (Input.GetKeyDown("v"))
         {
-            SteamUserStats.GetStat("2", out ShotsFired);
+            SteamUserStats.GetStat("Shots_Fired", out ShotsFired);
             ShotsFired++;
-            SteamUserStats.SetStat("2", ShotsFired);
+            SteamUserStats.SetStat("Shots_Fired", ShotsFired);
             SteamUserStats.StoreStats();
             Debug.Log(ShotsFired);
         }
