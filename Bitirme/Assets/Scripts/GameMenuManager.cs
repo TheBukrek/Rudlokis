@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameMenuManager : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class GameMenuManager : MonoBehaviour
     void Start()
     {
         
+    }
+    public void ChangeCurrentSceneToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     // Update is called once per frame

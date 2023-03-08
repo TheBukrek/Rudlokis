@@ -11,6 +11,7 @@ public class test : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         if(SteamManager.Initialized) {
+            SteamUserStats.RequestCurrentStats();
             string name = SteamFriends.GetPersonaName();
             Debug.Log(name);
         }

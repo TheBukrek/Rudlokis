@@ -14,7 +14,10 @@ public class MenuSceneManager : MonoBehaviour
     public void ChangeCurrentSceneToPolygon() {
         SceneManager.LoadScene(1);
     }
-
+    public void ChangeCurrentSceneToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void doExitGame()
     {
         Debug.Log("Exit");
