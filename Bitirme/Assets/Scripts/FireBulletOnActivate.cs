@@ -37,8 +37,17 @@ public class FireBulletOnActivate : MonoBehaviour
         ammoCountText.text = ammoCount.ToString();
     }
 
+    public void DamageUp() {
+        damage += 10f;
+    }
+
+    public void DamageDown() {
+        damage -= 10f;
+    }
+
     public void FireBullet(ActivateEventArgs args)
-    {
+    {   
+        Debug.Log(damage);
         if (currentAmmo > 0)
         {
             Steamworks.SteamUserStats.GetAchievement("FIRST_SHOT", out bool achievementCompleted);

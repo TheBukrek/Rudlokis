@@ -51,6 +51,15 @@ public class FireAutoBulletOnActivate : MonoBehaviour
         _timeToFire = 1 / fireRate;
         _timeToFireCurrent = _timeToFire;
     }
+
+
+    public void DamageUp() {
+        damage += 10f;
+    }
+
+    public void DamageDown() {
+        damage -= 10f;
+    }
     void Update()
     {
         
