@@ -7,9 +7,11 @@ public class test : MonoBehaviour
 {
     public string id;
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+        if(SteamManager.Initialized) {
+            string name = SteamFriends.GetPersonaName();
+            Debug.Log(name);
+        }
     }
 
     // Update is called once per frame
