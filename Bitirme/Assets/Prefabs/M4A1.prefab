@@ -515,12 +515,9 @@ Transform:
   - {fileID: 1636651460}
   - {fileID: 6663004913597426239}
   - {fileID: 6652116551220457180}
-<<<<<<< Updated upstream
   - {fileID: 1094162163}
-=======
   - {fileID: 2150974538083597266}
   - {fileID: 5791560742025239203}
->>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
@@ -895,8 +892,6 @@ MonoBehaviour:
   rightHandPose: {fileID: 1103580118130960826}
   leftHandPose: {fileID: 6585604591249952711}
   hold: 0
-<<<<<<< Updated upstream
-=======
 --- !u!1 &1808859605089528617
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +989,6 @@ MonoBehaviour:
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
->>>>>>> Stashed changes
 --- !u!1 &1835411067668278061
 GameObject:
   m_ObjectHideFlags: 0
