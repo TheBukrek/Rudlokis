@@ -9,6 +9,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
 {
     public List<XRSimpleInteractable> secondInt = new List<XRSimpleInteractable>();
 
+    //public GrabHandPoseForSimpleIntreractable GrabHandPoseForSimple;
     private Quaternion attachinitial;
     private XRBaseInteractor secondInteractor;
 
@@ -67,7 +68,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
     {   
         if(secondInteractor && selectingInteractor)
         {
-            selectingInteractor.attachTransform.rotation = GetTwoHandRotation();
+            selectingInteractor.transform.rotation = GetTwoHandRotation();
 
         }
         base.ProcessInteractable(updatePhase);
@@ -79,15 +80,15 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
         Quaternion targetRot = new Quaternion();
         if (rotationType==TwoHandRotationType.None)
         {
-            targetRot = Quaternion.LookRotation(secondInteractor.attachTransform.position - selectingInteractor.attachTransform.position);
+            targetRot = Quaternion.LookRotation(secondInteractor.transform.position - selectingInteractor.attachTransform.position);
         }
         else if (rotationType == TwoHandRotationType.First)
         {
-            targetRot = Quaternion.LookRotation(secondInteractor.attachTransform.position - selectingInteractor.attachTransform.position, selectingInteractor.attachTransform.up);
+            targetRot = Quaternion.LookRotation(secondInteractor.transform.position - selectingInteractor.attachTransform.position, selectingInteractor.attachTransform.up);
         }
         else if (rotationType == TwoHandRotationType.Second)
         {
-            targetRot = Quaternion.LookRotation(secondInteractor.attachTransform.position - selectingInteractor.attachTransform.position, secondInteractor.attachTransform.up);
+            targetRot = Quaternion.LookRotation(secondInteractor.transform.position - selectingInteractor.attachTransform.position, secondInteractor.attachTransform.up);
         }
         return targetRot;
     }
@@ -96,10 +97,9 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
 
         
         secondInteractor = interactor;
-        //secondInteractor.attachTransform.position = new Vector3(0, 0.5f, 0) + secondInteractor.attachTransform.position;
+        
         if (secondInteractor.transform.CompareTag("Left Hand"))
         {
-            Debug.Log("second grab Left");
             //secondInteractor.attachTransform = leftAttachTransformSecond;
 
         }
@@ -110,19 +110,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
         
     }
 
-    protected  void OnSelectEnteredSecondHand(SelectEnterEventArgs args)
-    {
-
-        if (args.interactorObject.transform.CompareTag("Left Hand"))
-        {
-            attachTransform = leftAttachTransformSecond;
-        }
-        else if (args.interactorObject.transform.CompareTag("Right Hand"))
-        {
-            attachTransform = rightAttachTransformSecond;
-        }
-        base.OnSelectEntered(args);
-    }
+    
 
     public void OnSecondHandRelease(XRBaseInteractor interactor)
     {
@@ -136,7 +124,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
         Debug.Log("first grab");
         
         base.OnSelectEntered(interactor);
-        attachinitial = interactor.attachTransform.localRotation;
+        attachinitial = interactor.transform.localRotation;
 
     }
     
@@ -146,7 +134,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
         Debug.Log("firts rel");
         base.OnSelectExited(interactor);
         secondInteractor = null;
-        interactor.attachTransform.localRotation = attachinitial;
+        interactor.transform.localRotation = attachinitial;
     }
 
     [System.Obsolete]

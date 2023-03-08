@@ -56,7 +56,7 @@ public class FireAutoBulletOnActivate : MonoBehaviour
         
         if (isFiring)
         {
-            Debug.Log(isFiring);
+            
             _timeToFireCurrent += Time.deltaTime;
             if (_timeToFireCurrent >= _timeToFire) {
                 _timeToFireCurrent = ( _timeToFireCurrent - _timeToFire);

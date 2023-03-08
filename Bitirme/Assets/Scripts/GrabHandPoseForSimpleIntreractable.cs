@@ -14,6 +14,8 @@ public class GrabHandPoseForSimpleIntreractable : MonoBehaviour
     public HandData rightHandPose;
     public HandData leftHandPose;
 
+    public bool hold = false;
+
     private Vector3 startingHandPosition;
     private Vector3 finalHandPosition;
     private Quaternion startingHandRotation;
@@ -36,6 +38,10 @@ public class GrabHandPoseForSimpleIntreractable : MonoBehaviour
         leftHandPose.gameObject.SetActive(false);
     }
 
+    private void Update()
+    {
+        
+    }
     public void SetupPose(BaseInteractionEventArgs arg)
     {
         if (arg.interactorObject is XRDirectInteractor)
