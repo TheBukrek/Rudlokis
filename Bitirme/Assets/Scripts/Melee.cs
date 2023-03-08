@@ -1,13 +1,15 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Melee : MonoBehaviour
 {
     Rigidbody rd;
     Vector3 previousPosition;
     float velocity;
+
+    Haptic swingHaptic;
 
     public float swingAmountRequired = 1;
     public float swingAmountCurrent  = 0;
@@ -26,7 +28,7 @@ public class Melee : MonoBehaviour
 
     private Quaternion midRotation;
     private bool midRotationAssigned;
-
+    XRBaseInteractable interactable;
 
 
     public GameObject projectilePrefab;
@@ -42,6 +44,8 @@ public class Melee : MonoBehaviour
         velocity = ((transform.position - previousPosition).magnitude) / Time.deltaTime;
         previousPosition = transform.position;
 
+        interactable = GetComponent<XRBaseInteractable>();
+
     }
 
     // Update is called once per frame
@@ -54,6 +58,7 @@ public class Melee : MonoBehaviour
 
         if (velocity >= swingAmountMinimumVelocity)
         {
+            // swingHaptic.TriggerHaptic(interactable, 0.05f, 0.1f );
 
             if (swingAmountCurrent == 0) {
                 //Debug.Log("Swing Started");
