@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &178694927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1103580118130960826, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
+  m_PrefabInstance: {fileID: 1835411068595881775}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69781abaf08d57438d815ce3454440e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &580367487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4757294380354626520, guid: 1ec06684d512ee44187ba7dea4f8577f, type: 3}
@@ -568,6 +579,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+--- !u!1 &1007648288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1636651459, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
+  m_PrefabInstance: {fileID: 1835411068595881775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1007648293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007648288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af15ac208d1beac46b7f4235dcb62c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poseTransitionDuration: 0.2
+  rightHandPose: {fileID: 178694927}
+  leftHandPose: {fileID: 1010595078}
+  hold: 0
+--- !u!114 &1010595078 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6585604591249952711, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
+  m_PrefabInstance: {fileID: 1835411068595881775}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69781abaf08d57438d815ce3454440e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1192341809 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1500681447078870587, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
@@ -2493,6 +2536,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 896506497}
+    - target: {fileID: 1835411067903973161, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
+      propertyPath: m_Colliders.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2229855593944969414, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
       propertyPath: m_RootOrder
       value: 1

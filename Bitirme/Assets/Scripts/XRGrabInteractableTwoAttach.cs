@@ -9,6 +9,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
 {
     public List<XRSimpleInteractable> secondInt = new List<XRSimpleInteractable>();
 
+    //public GrabHandPoseForSimpleIntreractable GrabHandPoseForSimple;
     private Quaternion attachinitial;
     private XRBaseInteractor secondInteractor;
 
@@ -67,7 +68,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
     {   
         if(secondInteractor && selectingInteractor)
         {
-            selectingInteractor.attachTransform.rotation = GetTwoHandRotation();
+            selectingInteractor.transform.rotation = GetTwoHandRotation();
 
         }
         base.ProcessInteractable(updatePhase);
@@ -83,7 +84,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
         }
         else if (rotationType == TwoHandRotationType.First)
         {
-            targetRot = Quaternion.LookRotation(secondInteractor.attachTransform.position - selectingInteractor.attachTransform.position, selectingInteractor.attachTransform.up);
+            targetRot = Quaternion.LookRotation(secondInteractor.transform.position - selectingInteractor.attachTransform.position, selectingInteractor.attachTransform.up);
         }
         else if (rotationType == TwoHandRotationType.Second)
         {
