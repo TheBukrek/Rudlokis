@@ -29,8 +29,8 @@ public class GrabHandPose : MonoBehaviour
 
         
         
-        grabInteractable.selectEntered.AddListener(SetupPose);
-        grabInteractable.selectExited.AddListener(UnsetPose);
+        // grabInteractable.selectEntered.AddListener(SetupPose);
+        // grabInteractable.selectExited.AddListener(UnsetPose);
         
         rightHandPose.gameObject.SetActive(false);
         leftHandPose.gameObject.SetActive(false);
@@ -41,6 +41,22 @@ public class GrabHandPose : MonoBehaviour
         if (arg.interactorObject is XRDirectInteractor)
         {
             HandData handData = arg.interactorObject.transform.GetComponentInChildren<HandData>();
+            handData.animator.enabled = false;
+
+            if (handData.handType == HandData.HandModelType.Right)
+            {
+                SetHandDataValues(handData, rightHandPose);
+            }
+            else
+            {
+                SetHandDataValues(handData, leftHandPose);
+            }
+            StartCoroutine(SetHandDataRoutine(handData, finalHandPosition, finalHandRotation, finalFingerRotations,
+                startingHandPosition, startingHandRotation, startingFingerRotations));
+        }
+        else if (arg.interactorObject is XRRayInteractor)
+        {
+            HandData handData = arg.interactorObject.transform.parent.GetComponentInChildren<HandData>();
             handData.animator.enabled = false;
 
             if (handData.handType == HandData.HandModelType.Right)
@@ -66,6 +82,14 @@ public class GrabHandPose : MonoBehaviour
                 StartCoroutine(SetHandDataRoutine(handData, startingHandPosition, startingHandRotation, startingFingerRotations,
                     finalHandPosition, finalHandRotation, finalFingerRotations));
 
+        }
+        else if (arg.interactorObject is XRRayInteractor)
+        {
+            HandData handData = arg.interactorObject.transform.parent.GetComponentInChildren<HandData>();
+            handData.animator.enabled = true;
+            
+            StartCoroutine(SetHandDataRoutine(handData, startingHandPosition, startingHandRotation, startingFingerRotations,
+                finalHandPosition, finalHandRotation, finalFingerRotations));
         }
     }
 

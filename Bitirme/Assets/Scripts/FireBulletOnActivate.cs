@@ -50,12 +50,8 @@ public class FireBulletOnActivate : MonoBehaviour
         Debug.Log(damage);
         if (currentAmmo > 0)
         {
-            Steamworks.SteamUserStats.GetAchievement("FIRST_SHOT", out bool achievementCompleted);
-            if (!achievementCompleted)
-            {
-                SteamUserStats.SetAchievement("FIRST_SHOT");
-                SteamUserStats.StoreStats();
-            }
+            SteamUserStats.SetAchievement("FIRST_SHOT");
+            SteamUserStats.StoreStats();
             // GameObject spawnedBullet = Instantiate(bullet);
             // spawnedBullet.transform.position = spawnPoint.position;
             // spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
@@ -108,6 +104,19 @@ public class FireBulletOnActivate : MonoBehaviour
                 leftReload.action.started += Reload;
             }
         }
+        else if (args.interactorObject is XRRayInteractor)
+        {
+            HandData handData = args.interactorObject.transform.parent.GetComponentInChildren<HandData>();
+
+            if (handData.handType == HandData.HandModelType.Right)
+            {
+                rightReload.action.started += Reload;
+            }
+            else
+            {
+                leftReload.action.started += Reload;
+            }
+        }
     }
     
     public void UnsetHand(BaseInteractionEventArgs args)
@@ -115,6 +124,19 @@ public class FireBulletOnActivate : MonoBehaviour
         if (args.interactorObject is XRDirectInteractor)
         {
             HandData handData = args.interactorObject.transform.GetComponentInChildren<HandData>();
+
+            if (handData.handType == HandData.HandModelType.Right)
+            {
+                rightReload.action.started -= Reload;
+            }
+            else
+            {
+                leftReload.action.started -= Reload;
+            }
+        }
+        else if (args.interactorObject is XRRayInteractor)
+        {
+            HandData handData = args.interactorObject.transform.parent.GetComponentInChildren<HandData>();
 
             if (handData.handType == HandData.HandModelType.Right)
             {

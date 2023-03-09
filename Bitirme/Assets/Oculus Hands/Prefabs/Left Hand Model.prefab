@@ -1110,33 +1110,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthIndicator
       objectReference: {fileID: 0}
-    - target: {fileID: 3636180278574892770, guid: c57abec8a71eb6b4b867afb861aebeeb, type: 3}
-      propertyPath: regen
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3636180278574892770, guid: c57abec8a71eb6b4b867afb861aebeeb, type: 3}
-      propertyPath: health
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3636180278574892770, guid: c57abec8a71eb6b4b867afb861aebeeb, type: 3}
-      propertyPath: MAX_HEALTH
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4898343436593990862, guid: c57abec8a71eb6b4b867afb861aebeeb, type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4898343436593990862, guid: c57abec8a71eb6b4b867afb861aebeeb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 4898343436593990862, guid: c57abec8a71eb6b4b867afb861aebeeb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 4898343436593990862, guid: c57abec8a71eb6b4b867afb861aebeeb, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4898343436593990862, guid: c57abec8a71eb6b4b867afb861aebeeb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1177,10 +1153,6 @@ PrefabInstance:
     - target: {fileID: 4898343436593990862, guid: c57abec8a71eb6b4b867afb861aebeeb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4898343436593990862, guid: c57abec8a71eb6b4b867afb861aebeeb, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c57abec8a71eb6b4b867afb861aebeeb, type: 3}
