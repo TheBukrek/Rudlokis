@@ -9,11 +9,14 @@ public enum FireType  {Single, Auto, Burst};
 public enum BulletType {Raycast, Projectile };
 public class Gun : MonoBehaviour {
 
+    
+
     [Header("References")]
     public Transform bulletSpawnPoint;
     public ParticleSystem muzzleFlash;
     public ParticleSystem bulletHitEffect;
     public AudioSource shootingSound;
+    public HapticController hapticController;
 
 
     [Header("Gun Config")]
@@ -112,6 +115,7 @@ public class Gun : MonoBehaviour {
 
 
     public void FireEffects() {
+        
         shootingSound.Play();
         bulletHitEffect.Play();
         muzzleFlash.Play();
@@ -122,7 +126,7 @@ public class Gun : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(bulletSpawnPoint.position, bulletSpawnPoint.forward, out hit))
         {
-            FireEffects();
+            
             bulletHitEffect.transform.position = hit.point;
             bulletHitEffect.transform.forward = hit.normal;
 
@@ -144,14 +148,19 @@ public class Gun : MonoBehaviour {
         {
             if (bulletType == BulletType.Raycast)
             {
+                FireEffects();
                 CalculateBulletRaycastHit();
 
             }
             else {
+                FireEffects();
                 SpawnBulletProjectile();
             }
 
             SpendAmmunition();
+            hapticController.SendHaptics(1f, 0.1f);
+            
+            
             //update ammo text
 
             justPressedTrigger = false;
@@ -168,15 +177,18 @@ public class Gun : MonoBehaviour {
         {
             if (bulletType == BulletType.Raycast)
             {
+                FireEffects();
                 CalculateBulletRaycastHit();
 
             }
             else
             {
+                FireEffects();
                 SpawnBulletProjectile();
             }
 
             SpendAmmunition();
+            hapticController.SendHaptics();
             //update ammo text
 
 

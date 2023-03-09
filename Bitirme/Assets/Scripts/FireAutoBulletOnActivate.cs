@@ -109,7 +109,7 @@ public class FireAutoBulletOnActivate : MonoBehaviour
 
     public void DoNotFire(DeactivateEventArgs arg0)
     {
-            isFiring = false;  
+        isFiring = false;  
     }
 
     public void FireBullet(ActivateEventArgs args)
