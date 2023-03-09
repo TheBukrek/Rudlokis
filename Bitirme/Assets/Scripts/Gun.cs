@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 
 public enum FireType  {Single, Auto, Burst};
@@ -23,8 +25,8 @@ public class Gun : MonoBehaviour {
     
     private int remainingBurstBullet;
 
-    [HideInInspector]
-    public int ammoCount;
+    //[HideInInspector]
+    public int ammoCount =100;
 
 
     [Header("Burst Fire Config")]
@@ -34,10 +36,12 @@ public class Gun : MonoBehaviour {
     public float burstFireRate; 
     private float lastBurstBulletFired; // smaller one
 
-
+    private bool isHoldingTrigger = false;
 
 
     private float lastFired;
+    private float lastFiredPistol;
+    private bool justPressedTrigger = false;
 
 
 
@@ -80,11 +84,15 @@ public class Gun : MonoBehaviour {
     }
 
 
-    public void Fire() { 
+    public void Fire()
+    {
+        
         Debug.Log("Fire()");
-        if (HasEnoughAmmo()) {
+        if (HasEnoughAmmo())
+        {
             Debug.Log("Gun has enough ammo to fire!");
-            switch (fireType) {
+            switch (fireType)
+            {
                 case FireType.Single:
                     FireSingle();
                     break;
@@ -98,6 +106,7 @@ public class Gun : MonoBehaviour {
                     break;
             }
         }
+        
      }
 
 
@@ -131,31 +140,75 @@ public class Gun : MonoBehaviour {
 
     protected void FireSingle() {
         
-
-        if (bulletType == BulletType.Raycast)
+        if (Time.time - lastFiredPistol > 1 / fireRate && justPressedTrigger)
         {
-            CalculateBulletRaycastHit();
+            if (bulletType == BulletType.Raycast)
+            {
+                CalculateBulletRaycastHit();
 
+            }
+            else {
+                SpawnBulletProjectile();
+            }
+
+            SpendAmmunition();
+            //update ammo text
+
+            justPressedTrigger = false;
+            lastFiredPistol = Time.time;
         }
-        else {
-            SpawnBulletProjectile();
-        }
 
-        SpendAmmunition();
-        //update ammo text
-
-        if (fireType != FireType.Burst) { 
-            lastFired = Time.time;
-            Debug.Log(lastFired);
         
+    }
+
+    protected void FireSingleBullet()
+    {
+
+        if (Time.time - lastFired > 1 / fireRate)
+        {
+            if (bulletType == BulletType.Raycast)
+            {
+                CalculateBulletRaycastHit();
+
+            }
+            else
+            {
+                SpawnBulletProjectile();
+            }
+
+            SpendAmmunition();
+            //update ammo text
+
+
+            if (fireType != FireType.Burst)
+            {
+                lastFired = Time.time;
+                Debug.Log(lastFired);
+
+            }
         }
+
+
     }
 
 
+
+    public void setIsHoldingTriggerFALSE(DeactivateEventArgs arg0)
+    {
+        isHoldingTrigger = false;  
+    }
+
+    public void setIsHoldingTriggerTRUE(ActivateEventArgs args)
+    {
+        isHoldingTrigger = true;
+        justPressedTrigger = true;
+        
+    }
+
     protected void FireAuto()
     {
-        if (Time.time - lastFired > 1 / fireRate) {
-            FireSingle();
+        if (Time.time - lastFired > 1 / fireRate ) {
+            FireSingleBullet();
         }
 
 
@@ -173,7 +226,7 @@ public class Gun : MonoBehaviour {
             if (remainingBurstBullet > 0 && Time.time - lastBurstBulletFired > 1 / burstFireRate)
             {
                 Debug.Log("Next burst bullet is ready to fire");
-                FireSingle();
+                FireSingleBullet();
 
                 remainingBurstBullet -= 1;
                 
@@ -182,6 +235,7 @@ public class Gun : MonoBehaviour {
 
                 if (remainingBurstBullet == 0) {
                     Debug.Log("Burst Fire completed");
+                    remainingBurstBullet = numberOfBulletsToBurst;
                     lastFired = Time.time;
                 }
             }
@@ -199,12 +253,19 @@ public class Gun : MonoBehaviour {
     void Start()
     {
         lastFired = -999f;
-        remainingBurstBullet = numberOfBulletsToBurst;   
+        remainingBurstBullet = numberOfBulletsToBurst;
+        XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
+        shootingSound = GetComponent<AudioSource>();
+        
+        grabbable.activated.AddListener(setIsHoldingTriggerTRUE);
+        grabbable.deactivated.AddListener(setIsHoldingTriggerFALSE);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (isHoldingTrigger) {
+            Fire();
+        }  
     }
 }
