@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 411859787384016056}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 6595406556492983944}
   - component: {fileID: 5778089908057467593}
   - component: {fileID: 3102499303628958215}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: SM_Muzzle_Brake_Compensator_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

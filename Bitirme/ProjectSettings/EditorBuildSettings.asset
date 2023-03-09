@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShootingRangeForMechanics.unity
     guid: 243e4a4f5a985474aa1500e6bb101ad1
+  - enabled: 1
+    path: Assets/Scenes/TutorialScene.unity
+    guid: 6255815b615ad65448600bad84bdecc1
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d7ca1268af179ce49807d745629b78e7, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8b704175871042644b8c74148ad63d30, type: 2}

@@ -29,8 +29,8 @@ RectTransform:
   m_GameObject: {fileID: 1016613817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.69, y: 1.69, z: 1.69}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1223319545}
   m_Father: {fileID: 5494148697390531088}
@@ -414,7 +414,7 @@ Transform:
   m_GameObject: {fileID: 1189325370087977419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.542, y: 1.342, z: 1.4232}
-  m_LocalScale: {x: 1.36, y: 1.36, z: 1.36}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5494148697390531088}
@@ -813,7 +813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7692973862975678681, guid: 3ed066d6846496642ae5afb48e5ab88a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeCurrentSceneToPolygon
+      value: ChangeCurrentSceneToTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 7692973862975678681, guid: 3ed066d6846496642ae5afb48e5ab88a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

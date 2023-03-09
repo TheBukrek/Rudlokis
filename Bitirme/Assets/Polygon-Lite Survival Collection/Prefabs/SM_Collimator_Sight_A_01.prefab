@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7664108357789892679}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8698060062416327722}
   - component: {fileID: 2104952757143247412}
   - component: {fileID: 1878846754}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: SM_Collimator_Sight_A_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

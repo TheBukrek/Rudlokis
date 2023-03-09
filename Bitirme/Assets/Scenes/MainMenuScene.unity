@@ -506,22 +506,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1016613818, guid: ba6ad270a47b0a44fab28908a659a210, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 1016613818, guid: ba6ad270a47b0a44fab28908a659a210, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 1016613818, guid: ba6ad270a47b0a44fab28908a659a210, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 1016613818, guid: ba6ad270a47b0a44fab28908a659a210, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1189325370087977419, guid: ba6ad270a47b0a44fab28908a659a210, type: 3}
       propertyPath: m_Name
       value: Main Menu
@@ -529,18 +513,6 @@ PrefabInstance:
     - target: {fileID: 1189325370087977420, guid: ba6ad270a47b0a44fab28908a659a210, type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1189325370087977420, guid: ba6ad270a47b0a44fab28908a659a210, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1189325370087977420, guid: ba6ad270a47b0a44fab28908a659a210, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1189325370087977420, guid: ba6ad270a47b0a44fab28908a659a210, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1189325370087977420, guid: ba6ad270a47b0a44fab28908a659a210, type: 3}
       propertyPath: m_LocalPosition.x

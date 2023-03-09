@@ -18,6 +18,11 @@ public class MenuSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void ChangeCurrentSceneToTutorial()
+    {
+        SceneManager.LoadScene(2);
+    }
     public void doExitGame()
     {
         Debug.Log("Exit");
