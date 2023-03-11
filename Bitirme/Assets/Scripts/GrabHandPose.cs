@@ -26,16 +26,13 @@ public class GrabHandPose : MonoBehaviour
     void Start()
     {
         XRGrabInteractable grabInteractable = GetComponent<XRGrabInteractable>();
-
-        
-        
-        // grabInteractable.selectEntered.AddListener(SetupPose);
-        // grabInteractable.selectExited.AddListener(UnsetPose);
+        grabInteractable.selectEntered.AddListener(SetupPose);
+        grabInteractable.selectExited.AddListener(UnsetPose);
         
         rightHandPose.gameObject.SetActive(false);
         leftHandPose.gameObject.SetActive(false);
     }
-
+    
     public void SetupPose(BaseInteractionEventArgs arg)
     {
         if (arg.interactorObject is XRDirectInteractor)
@@ -101,10 +98,7 @@ public class GrabHandPose : MonoBehaviour
         finalHandPosition = new Vector3(h2.root.localPosition.x / h2.root.localScale.x,
             h2.root.localPosition.y/ h2.root.localScale.y,
             h2.root.localPosition.z/ h2.root.localScale.z);
-
-        // startingHandPosition = h1.root.localPosition;
-        // finalHandPosition = h2.root.localPosition;
-
+        
         startingHandRotation = h1.root.localRotation;
         finalHandRotation = h2.root.localRotation;
 
