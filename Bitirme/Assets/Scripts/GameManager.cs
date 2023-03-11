@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Steamworks;
+
 
 public class GameManager : MonoBehaviour
 {
 
     private static GameManager _instance;
+
     public static GameManager Instance{
 
         get{
@@ -19,6 +22,17 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+        if (SteamManager.Initialized)
+        {
+            SteamUserStats.RequestCurrentStats();
+            string name = SteamFriends.GetPersonaName();
+            Debug.Log(name);
+        }
+        SteamUserStats.GetStat("XP", out xp);
+        SteamUserStats.GetStat("Level", out level);
+
+        DontDestroyOnLoad(this.gameObject);
+        CalculateRequiredXp();
     }
 
 
@@ -37,7 +51,6 @@ public class GameManager : MonoBehaviour
         level = Mathf.FloorToInt (Mathf.Sqrt(newXp) * requiredXpMultiplier);
         xp = newXp;
         CalculateRequiredXp();
-
     }
 
     public float CalculateRequiredXp()
@@ -48,9 +61,10 @@ public class GameManager : MonoBehaviour
         
     }
 
-
-
-    private void Update()
+    void OnApplicationQuit()
     {
+        SteamUserStats.SetStat("Level", level);
+        SteamUserStats.SetStat("XP", xp);
     }
 }
+
