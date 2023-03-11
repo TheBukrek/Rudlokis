@@ -5221,11 +5221,10 @@ GameObject:
   - component: {fileID: 4511655667520052993}
   - component: {fileID: 994940816}
   - component: {fileID: 994940815}
-  - component: {fileID: 994940817}
-  - component: {fileID: 1577131379}
   - component: {fileID: 1948040508}
   - component: {fileID: 2658790295781069296}
   - component: {fileID: 1472078561}
+  - component: {fileID: 3358600710294745290}
   m_Layer: 7
   m_Name: pistol
   m_TagString: Untagged
@@ -5290,45 +5289,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.012059392, y: 0.0384833, z: 0.04999017}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &994940817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4511655667520406305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 901ae7f64a4c4d94f84ea9995849c6a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 7367096669260372379, guid: 8535affee00eb1644b63fd6816d3907b, type: 3}
-  spawnPoint: {fileID: 1868707905}
-  fireSpeed: 20
-  ammoCount: 12
-  currentAmmo: 0
-  damage: 20
-  ammoCountText: {fileID: 1593212625}
-  muzzleFlash: {fileID: 208488776}
-  bulletHitEffect: {fileID: 5307049444064065503}
-  shootingSound: {fileID: 0}
-  leftReload: {fileID: -7479308135824070112, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  rightReload: {fileID: -8899104054584623456, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &1577131379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4511655667520406305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f087e8508b1673248927a861dd863b1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hapticOnActive:
-    intensity: 1
-    duration: 0.1
 --- !u!114 &1948040508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5581,6 +5541,30 @@ MonoBehaviour:
   m_AttachPointCompatibilityMode: 0
   leftAttachTransform: {fileID: 2035814278}
   rightAttachTransform: {fileID: 2048707778}
+--- !u!114 &3358600710294745290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4511655667520406305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e2099c39c4b5c4faf0c6089d27a9b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnPoint: {fileID: 1868707905}
+  muzzleFlash: {fileID: 208488776}
+  bulletHitEffect: {fileID: 5307049444064065503}
+  shootingSound: {fileID: 2658790295781069296}
+  hapticController: {fileID: 0}
+  fireType: 2
+  bulletType: 0
+  damage: 20
+  fireRate: 2
+  ammoCount: 12
+  numberOfBulletsToBurst: 3
+  burstFireRate: 23.9
 --- !u!1 &4511655667520406309
 GameObject:
   m_ObjectHideFlags: 0
@@ -5758,7 +5742,6 @@ GameObject:
   - component: {fileID: 5296107963604457160}
   - component: {fileID: 3360159982194248183}
   - component: {fileID: 6525808969765924258}
-  - component: {fileID: 517624519}
   m_Layer: 0
   m_Name: muzzleAttach
   m_TagString: Untagged
@@ -5824,9 +5807,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 994940817}
-        m_TargetAssemblyTypeName: FireBulletOnActivate, Assembly-CSharp
-        m_MethodName: DamageUp
+      - m_Target: {fileID: 3358600710294745290}
+        m_TargetAssemblyTypeName: Gun, Assembly-CSharp
+        m_MethodName: AddMuzzleDamageBonus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5839,9 +5822,9 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 994940817}
-        m_TargetAssemblyTypeName: FireBulletOnActivate, Assembly-CSharp
-        m_MethodName: DamageDown
+      - m_Target: {fileID: 3358600710294745290}
+        m_TargetAssemblyTypeName: Gun, Assembly-CSharp
+        m_MethodName: RemoveMuzzleDamageBonus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5869,18 +5852,6 @@ MonoBehaviour:
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
---- !u!114 &517624519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6169855146764953656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e253ebe3eee90634fa87b14f0318cb1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6662601779412578081
 GameObject:
   m_ObjectHideFlags: 0
