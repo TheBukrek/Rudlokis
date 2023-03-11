@@ -10,15 +10,20 @@ public class SocketPositioner : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        transform.position = Quaternion.Euler(0, origin.transform.rotation.y, 0) * (origin.transform.position + offSet);
+    { 
+        var pos = origin.transform.position; 
+        var forward = origin.transform.forward; 
+        transform.position = pos + (forward * offSet.z);
+        transform.position = new Vector3(transform.position.x, pos.y + offSet.y, transform.position.z);
     }
-
+    
     private void OnDrawGizmos()
     {
-        if (origin != null)
-        {
-            Gizmos.DrawLine(origin.transform.position, origin.transform.position + offSet);
-        }
+            var pos = origin.transform.position;
+            var forward = origin.transform.forward;
+            forward.y = 0;
+            Gizmos.color = Color.blue;
+            // Gizmos.DrawLine(pos, pos + Vector3.ProjectOnPlane(gameObject.transform.forward, Vector3.up));
+            Gizmos.DrawLine(pos, pos + forward.normalized);
     }
 }

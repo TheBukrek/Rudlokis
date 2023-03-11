@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.18377483, g: 0.22831163, b: 0.29963553, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &501773324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5813286646113849324, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
+  m_PrefabInstance: {fileID: 1500681448069664522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &501773328
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501773324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &667461760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -915,6 +933,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1645978614, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1500681447078870567, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
       propertyPath: m_Name
       value: XR Origin New
@@ -962,6 +984,18 @@ PrefabInstance:
     - target: {fileID: 1500681447078870589, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560637867426637895, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
+      propertyPath: offSet.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560637867426637895, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
+      propertyPath: offSet.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560637867426637895, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
+      propertyPath: offSet.z
+      value: -0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
