@@ -40,7 +40,7 @@ public class GameMenuManager : MonoBehaviour
             menu.transform.forward *= -1;
         }
 
-        levelArea.text = "XP:" + Mathf.FloorToInt(GameManager.Instance.xp) +"\\"+ Mathf.FloorToInt(GameManager.Instance.requiredXp) + "\n Level:"+ Mathf.FloorToInt(GameManager.Instance.level);
+        levelArea.text = "XP:" + Mathf.FloorToInt(GameManager.Instance.xp) +"/"+ Mathf.FloorToInt(GameManager.Instance.requiredXp) + "\n Level:"+ Mathf.FloorToInt(GameManager.Instance.level);
         
     }
 }
