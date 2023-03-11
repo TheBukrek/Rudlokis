@@ -304,6 +304,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5129450360848668517, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: healthIndicator
+      value: 
+      objectReference: {fileID: 1500681448069664524}
+    - target: {fileID: 5129450362186800237, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: healthIndicator
+      value: 
+      objectReference: {fileID: 1500681448069664524}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
 --- !u!1001 &755587295
@@ -615,6 +623,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3358600710294745290, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+      propertyPath: fireRate
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358600710294745290, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
       propertyPath: hapticController
       value: 
       objectReference: {fileID: 940939784}
@@ -890,6 +902,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie1
       objectReference: {fileID: 0}
+    - target: {fileID: 5129450360848668517, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: healthIndicator
+      value: 
+      objectReference: {fileID: 1500681448069664524}
+    - target: {fileID: 5129450362186800237, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: healthIndicator
+      value: 
+      objectReference: {fileID: 1500681448069664524}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
 --- !u!1001 &2024466038
@@ -899,6 +919,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2024466046, guid: 6db7680dca4eb2748a7339cb3bc13d14, type: 3}
+      propertyPath: healthIndicator
+      value: 
+      objectReference: {fileID: 1500681448069664524}
     - target: {fileID: 1375224013855558137, guid: 6db7680dca4eb2748a7339cb3bc13d14, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1080,6 +1104,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1500681447078870567, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
   m_PrefabInstance: {fileID: 1500681448069664522}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1500681448069664524 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4796785160716750648, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
+  m_PrefabInstance: {fileID: 1500681448069664522}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7dad910c1d13e46974be1dbf38d581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1835411068595881775
 PrefabInstance:
   m_ObjectHideFlags: 0

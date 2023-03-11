@@ -5561,7 +5561,7 @@ MonoBehaviour:
   fireType: 0
   bulletType: 0
   damage: 20
-  fireRate: 2
+  fireRate: 4
   ammoCount: 12
   numberOfBulletsToBurst: 3
   burstFireRate: 23.9
