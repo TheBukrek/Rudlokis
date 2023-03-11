@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef5658a159fc2c443808fe024c693a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftController: {fileID: 0}
+  rightController: {fileID: 0}
+  defaultAmplitude: 0.2
+  defaultDuration: 0.1

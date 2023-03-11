@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.18377483, g: 0.22831163, b: 0.29963553, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,71 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &276514321
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4492957190240811500, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: leftController
+      value: 
+      objectReference: {fileID: 1170662881}
+    - target: {fileID: 4492957190240811500, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: rightController
+      value: 
+      objectReference: {fileID: 1714356253}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.9642725
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1841438
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.2465622
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811503, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_Name
+      value: HapticController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
 --- !u!1001 &667461760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -527,6 +592,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &940939784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4492957190240811500, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+  m_PrefabInstance: {fileID: 276514321}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5658a159fc2c443808fe024c693a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &994940811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -534,6 +610,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3358600710294745290, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+      propertyPath: hapticController
+      value: 
+      objectReference: {fileID: 940939784}
     - target: {fileID: 4511655667520052993, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -641,6 +721,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d759acaee2ea75f438782607d33c5679, type: 3}
+--- !u!114 &1170662881 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1500681446257911896, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
+  m_PrefabInstance: {fileID: 1500681448069664522}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1192341809 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1500681447078870587, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
@@ -725,6 +816,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1500681446682945795, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
   m_PrefabInstance: {fileID: 1500681448069664522}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1714356253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1500681447323200464, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
+  m_PrefabInstance: {fileID: 1500681448069664522}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1912086612
 PrefabInstance:
   m_ObjectHideFlags: 0
