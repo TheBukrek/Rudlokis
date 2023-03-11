@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
 
         level = Mathf.FloorToInt (Mathf.Sqrt(newXp) * requiredXpMultiplier);
         xp = newXp;
+        CalculateRequiredXp();
+
     }
 
     public float CalculateRequiredXp()
@@ -50,10 +52,5 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("level: "+level);
-        Debug.Log("xp: " + xp);
-        Debug.Log("requiredXp: " + requiredXp);
-        CalculateRequiredXp();
-        AddXp(Time.deltaTime * 100);
     }
 }
