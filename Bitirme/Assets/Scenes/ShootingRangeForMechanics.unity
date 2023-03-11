@@ -1122,6 +1122,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5677486770577915924, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
+      propertyPath: hapticController
+      value: 
+      objectReference: {fileID: 940939784}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
 --- !u!1001 &9107765580195193332

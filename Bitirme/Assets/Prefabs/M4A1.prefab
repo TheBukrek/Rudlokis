@@ -503,8 +503,8 @@ GameObject:
   - component: {fileID: 1835411067903973161}
   - component: {fileID: 7563207416086577607}
   - component: {fileID: 9074218786605793643}
-  - component: {fileID: 2117093526}
   - component: {fileID: 2117093535}
+  - component: {fileID: 5677486770577915924}
   m_Layer: 7
   m_Name: M4A1
   m_TagString: Untagged
@@ -892,32 +892,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2117093526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565521444894517884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b640dd29b35a84348acb43a940c38546, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 7367096669260372379, guid: 8535affee00eb1644b63fd6816d3907b, type: 3}
-  spawnPoint: {fileID: 2471214699571151446}
-  fireSpeed: 20
-  ammoCount: 30
-  currentAmmo: 0
-  damage: 20
-  ammoCountText: {fileID: 373983153}
-  muzzleFlash: {fileID: 5697695379261299663}
-  bulletHitEffect: {fileID: 622050747607896241}
-  shootingSound: {fileID: 9074218786605793643}
-  leftReload: {fileID: -7479308135824070112, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  rightReload: {fileID: -8899104054584623456, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  isFiring: 0
-  fireRate: 7
 --- !u!114 &2117093535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,6 +908,30 @@ MonoBehaviour:
   rightHandPose: {fileID: 0}
   leftHandPose: {fileID: 6585604591249952711}
   hold: 0
+--- !u!114 &5677486770577915924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565521444894517884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e2099c39c4b5c4faf0c6089d27a9b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnPoint: {fileID: 2471214699571151446}
+  muzzleFlash: {fileID: 5697695379261299663}
+  bulletHitEffect: {fileID: 622050747607896241}
+  shootingSound: {fileID: 9074218786605793643}
+  hapticController: {fileID: 0}
+  fireType: 1
+  bulletType: 0
+  damage: 18
+  fireRate: 12
+  ammoCount: 100
+  numberOfBulletsToBurst: 2
+  burstFireRate: 0
 --- !u!1 &1808859605089528617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,9 +1008,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2117093526}
-        m_TargetAssemblyTypeName: FireAutoBulletOnActivate, Assembly-CSharp
-        m_MethodName: DamageUp
+      - m_Target: {fileID: 5677486770577915924}
+        m_TargetAssemblyTypeName: Gun, Assembly-CSharp
+        m_MethodName: AddMuzzleDamageBonus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1025,9 +1023,9 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2117093526}
-        m_TargetAssemblyTypeName: FireAutoBulletOnActivate, Assembly-CSharp
-        m_MethodName: DamageDown
+      - m_Target: {fileID: 5677486770577915924}
+        m_TargetAssemblyTypeName: Gun, Assembly-CSharp
+        m_MethodName: RemoveMuzzleDamageBonus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

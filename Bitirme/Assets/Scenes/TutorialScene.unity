@@ -4755,6 +4755,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4012160720677748, guid: cb825447b7c1ef442a049949c3f95ba7, type: 3}
   m_PrefabInstance: {fileID: 1178391966}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1195117331 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1500681447323200464, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
+  m_PrefabInstance: {fileID: 2036066849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1226209413
 GameObject:
   m_ObjectHideFlags: 0
@@ -4972,6 +4983,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5677486770577915924, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
+      propertyPath: hapticController
+      value: 
+      objectReference: {fileID: 1937118961}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
 --- !u!4 &1241528944 stripped
@@ -6189,6 +6204,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477922192}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1516380831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1500681446257911896, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
+  m_PrefabInstance: {fileID: 2036066849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1521078308
 GameObject:
   m_ObjectHideFlags: 0
@@ -8027,6 +8053,82 @@ Transform:
   m_Father: {fileID: 1783746468}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1937118960
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4492957190240811500, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: leftController
+      value: 
+      objectReference: {fileID: 1516380831}
+    - target: {fileID: 4492957190240811500, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: rightController
+      value: 
+      objectReference: {fileID: 1195117331}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.9642725
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1841438
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.2465622
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811501, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4492957190240811503, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+      propertyPath: m_Name
+      value: HapticController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+--- !u!114 &1937118961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4492957190240811500, guid: 76b9fa8014697e54285681dc10f1283e, type: 3}
+  m_PrefabInstance: {fileID: 1937118960}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5658a159fc2c443808fe024c693a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2001665408
 GameObject:
   m_ObjectHideFlags: 0
@@ -8373,15 +8475,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1500681447078870589, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1500681447078870589, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1500681447078870589, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1500681447078870589, guid: de636e6e647d1f44f8ea33e268de453f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8431,6 +8533,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1543998114}
     m_Modifications:
+    - target: {fileID: 3358600710294745290, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+      propertyPath: hapticController
+      value: 
+      objectReference: {fileID: 1937118961}
     - target: {fileID: 4511655667520052993, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
       propertyPath: m_RootOrder
       value: 1

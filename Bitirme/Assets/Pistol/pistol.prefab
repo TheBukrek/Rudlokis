@@ -5558,7 +5558,7 @@ MonoBehaviour:
   bulletHitEffect: {fileID: 5307049444064065503}
   shootingSound: {fileID: 2658790295781069296}
   hapticController: {fileID: 0}
-  fireType: 2
+  fireType: 0
   bulletType: 0
   damage: 20
   fireRate: 2
