@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Steamworks;
+using DiscordPresence;
 
 
 public class GameManager : MonoBehaviour
@@ -33,8 +34,12 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
         CalculateRequiredXp();
+
+        PresenceManager.UpdatePresence(detail: detail, state: state);
     }
 
+    public string detail;
+    public string state;
 
     public int level;
     public float xp;
