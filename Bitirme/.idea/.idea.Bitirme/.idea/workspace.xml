@@ -13,6 +13,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GrabHandPose.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GrabHandPose1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HandData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LobbyDataEntry.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PistolFireAnimationScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SteamLobby.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/XROffsetGrabInteractable.cs" root0="FORCE_HIGHLIGHTING" />
@@ -116,7 +117,8 @@
       <workItem from="1678536588929" duration="2934000" />
       <workItem from="1678543273021" duration="55000" />
       <workItem from="1678543852046" duration="12752000" />
-      <workItem from="1679224808152" duration="3529000" />
+      <workItem from="1679224808152" duration="3869000" />
+      <workItem from="1679406989775" duration="2715000" />
     </task>
     <servers />
   </component>
