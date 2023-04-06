@@ -1631,6 +1631,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
+      propertyPath: onlineScene
+      value: Assets/Scenes/ZombieScene.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
+      propertyPath: offlineScene
+      value: Assets/Scenes/MainMenuScene.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 1174468345130753011, guid: 6f57ab05c2b321749ac1d341e8605359, type: 3}
+    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
+      propertyPath: GamePlayerPrefab
+      value: 
+      objectReference: {fileID: 3420922412309496206, guid: 59f5882deb352b3499af090386eba67d, type: 3}
+    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
+      propertyPath: autoCreatePlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
+      propertyPath: spawnPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
+      propertyPath: spawnPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 2831513090057146917, guid: 59f5882deb352b3499af090386eba67d, type: 3}
     - target: {fileID: 5240514843209409231, guid: 99dc0906753e736459799513df0fbde0, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1734,6 +1762,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba6ad270a47b0a44fab28908a659a210, type: 3}
+--- !u!1 &1645721528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1645721530}
+  - component: {fileID: 1645721529}
+  m_Layer: 0
+  m_Name: LobbyController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1645721529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645721528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d99e5c76d90725a42a20eee47eae2970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LobbyNameText: {fileID: 0}
+  PlayerListViewContent: {fileID: 271106587}
+  PlayerListItemPrefab: {fileID: 8235664091111598801, guid: 1387f7953db930142a6c00d5e9ce1865, type: 3}
+  LocalPlayerObject: {fileID: 0}
+  CurrentLobbyID: 0
+  PlayerItemCreated: 0
+  LocalPlayerController: {fileID: 0}
+--- !u!4 &1645721530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645721528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.6680782, y: 5.143338, z: 0.0074635744}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1657530008
 PrefabInstance:
   m_ObjectHideFlags: 0
