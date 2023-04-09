@@ -12,6 +12,10 @@ public class PlayerListItem : MonoBehaviour
     public ulong PlayerSteamID;
     private bool AvatarReceived;
 
+    public TextMeshProUGUI PlayerReadyText;
+    public bool Ready;
+
+
     public TextMeshProUGUI PlayerNameText;
     public RawImage PlayerIcon;
 
@@ -23,8 +27,23 @@ public class PlayerListItem : MonoBehaviour
 
     }
 
+    public void ChangeReadyStatus()
+    {
+        if (Ready)
+        {
+            PlayerReadyText.text = "Ready";
+            PlayerReadyText.color = Color.green;
+        }
+        else
+        {
+            PlayerReadyText.text = "Not Ready";
+            PlayerReadyText.color = Color.red;
+        }
+    }
+
     public void SetPlayerValues() {
         PlayerNameText.text = PlayerName;
+        ChangeReadyStatus();
         if (!AvatarReceived) {
             GetPlayerIcon();
         }
