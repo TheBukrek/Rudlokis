@@ -82,7 +82,6 @@ public class LobbyController : MonoBehaviour
 
             GameObject NewPlayerItem = Instantiate(PlayerListItemPrefab, Vector3.zero, Quaternion.identity) as GameObject;
             Debug.Log(NewPlayerItem.transform.position);
-            Debug.Log("ANASKM");
             
             PlayerListItem NewPlayerItemScript = NewPlayerItem.GetComponent<PlayerListItem>();
 
@@ -165,7 +164,6 @@ public class LobbyController : MonoBehaviour
                 NewPlayerItem.transform.localPosition = Vector3.zero;
                 NewPlayerItem.transform.localRotation = Quaternion.identity;
                 Debug.Log(NewPlayerItem.transform.localPosition);
-                Debug.Log("ANASKM");
                 PlayerListItem NewPlayerItemScript = NewPlayerItem.GetComponent<PlayerListItem>();
 
                 NewPlayerItemScript.PlayerName = player.PlayerName;
