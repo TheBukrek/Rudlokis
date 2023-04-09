@@ -13,6 +13,8 @@ public class LobbyController : MonoBehaviour
 
     public TextMeshProUGUI LobbyNameText;
 
+    public GameObject LobbyInfoCanvas;
+
     //playerData
     public GameObject PlayerListViewContent;
     public GameObject PlayerListItemPrefab;
@@ -77,9 +79,14 @@ public class LobbyController : MonoBehaviour
     public void CreateHostPlayerItem()
     {
         foreach (PlayerObjectController player in Manager.GamePlayers) {
-            GameObject NewPlayerItem = Instantiate(PlayerListItemPrefab) as GameObject;
+
+            GameObject NewPlayerItem = Instantiate(PlayerListItemPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+            Debug.Log(NewPlayerItem.transform.position);
+            Debug.Log("ANASKM");
+            
             PlayerListItem NewPlayerItemScript = NewPlayerItem.GetComponent<PlayerListItem>();
 
+            
             NewPlayerItemScript.PlayerName = player.PlayerName;
             NewPlayerItemScript.ConnectionID = player.ConnectionID;
             NewPlayerItemScript.PlayerSteamID = player.PlayerSteamID;
@@ -153,7 +160,12 @@ public class LobbyController : MonoBehaviour
         {
             if (!PlayerListItems.Any(b => b.ConnectionID == player.ConnectionID))
             {
-                GameObject NewPlayerItem = Instantiate(PlayerListItemPrefab) as GameObject;
+                //GameObject NewPlayerItem = Instantiate(PlayerListItemPrefab) as GameObject;
+                GameObject NewPlayerItem = Instantiate(PlayerListItemPrefab, Vector3.zero, Quaternion.identity, LobbyInfoCanvas.transform) as GameObject;
+                NewPlayerItem.transform.localPosition = Vector3.zero;
+                NewPlayerItem.transform.localRotation = Quaternion.identity;
+                Debug.Log(NewPlayerItem.transform.localPosition);
+                Debug.Log("ANASKM");
                 PlayerListItem NewPlayerItemScript = NewPlayerItem.GetComponent<PlayerListItem>();
 
                 NewPlayerItemScript.PlayerName = player.PlayerName;
