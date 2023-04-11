@@ -81,7 +81,7 @@ public class LobbyController : MonoBehaviour
         foreach (PlayerObjectController player in Manager.GamePlayers) {
 
             GameObject NewPlayerItem = Instantiate(PlayerListItemPrefab, Vector3.zero, Quaternion.identity) as GameObject;
-            Debug.Log(NewPlayerItem.transform.position);
+            Debug.Log("createHostPlayerItem() called");
             
             PlayerListItem NewPlayerItemScript = NewPlayerItem.GetComponent<PlayerListItem>();
 
@@ -104,6 +104,7 @@ public class LobbyController : MonoBehaviour
 
     public void ReadyPlayer()
     {
+        
         LocalPlayerController.ChangeReady();
     }
 
@@ -118,6 +119,7 @@ public class LobbyController : MonoBehaviour
             ReadyButtonText.text = "Ready";
         }
     }
+    
 
     public void CheckIfAllReady()
     {
