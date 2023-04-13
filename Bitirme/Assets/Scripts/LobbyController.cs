@@ -81,12 +81,7 @@ public class LobbyController : MonoBehaviour
         foreach (PlayerObjectController player in Manager.GamePlayers) {
 
             GameObject NewPlayerItem = Instantiate(PlayerListItemPrefab, Vector3.zero, Quaternion.identity) as GameObject;
-<<<<<<< HEAD
             Debug.Log("createHostPlayerItem() called");
-=======
-            Debug.Log(NewPlayerItem.transform.position);
-            Debug.Log("ANASKM");
->>>>>>> parent of e106c42 (Debug Deleted)
             
             PlayerListItem NewPlayerItemScript = NewPlayerItem.GetComponent<PlayerListItem>();
 
@@ -171,7 +166,6 @@ public class LobbyController : MonoBehaviour
                 NewPlayerItem.transform.localPosition = Vector3.zero;
                 NewPlayerItem.transform.localRotation = Quaternion.identity;
                 Debug.Log(NewPlayerItem.transform.localPosition);
-                Debug.Log("ANASKM");
                 PlayerListItem NewPlayerItemScript = NewPlayerItem.GetComponent<PlayerListItem>();
 
                 NewPlayerItemScript.PlayerName = player.PlayerName;
