@@ -159,7 +159,7 @@ public class LobbyController : MonoBehaviour
         {
             if (!PlayerListItems.Any(b => b.ConnectionID == player.ConnectionID))
             {
-                Debug.Log("Client Player Created");
+                //GameObject NewPlayerItem = Instantiate(PlayerListItemPrefab) as GameObject;
                 GameObject NewPlayerItem = Instantiate(PlayerListItemPrefab, Vector3.zero, Quaternion.identity, LobbyInfoCanvas.transform) as GameObject;
                 NewPlayerItem.transform.localPosition = Vector3.zero;
                 NewPlayerItem.transform.localRotation = Quaternion.identity;

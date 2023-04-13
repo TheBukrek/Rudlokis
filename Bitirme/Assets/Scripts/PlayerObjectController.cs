@@ -42,7 +42,6 @@ public class PlayerObjectController : NetworkBehaviour
     }
     public override void OnStartClient()
     {
-        Debug.Log("Starting Client");
         Manager.GamePlayers.Add(this);
         LobbyController.Instance.UpdateLobbyName();
         LobbyController.Instance.UpdatePlayerList();
