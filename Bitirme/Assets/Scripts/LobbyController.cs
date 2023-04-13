@@ -195,10 +195,8 @@ public class LobbyController : MonoBehaviour
     }
 
     public void UpdatePlayerItem() {
-        Debug.Log("öldür");
         foreach (PlayerObjectController player in Manager.GamePlayers)
         {
-            Debug.Log("zaza");
             foreach (PlayerListItem PlayerListItemScript in PlayerListItems)
             {
                 if (PlayerListItemScript.ConnectionID == player.ConnectionID) {
