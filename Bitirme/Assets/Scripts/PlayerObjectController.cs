@@ -73,13 +73,14 @@ public class PlayerObjectController : NetworkBehaviour
     {
         if (isServer)
         {
-            Debug.Log("degisla server");
+            
             this.Ready = newValue;
+            LobbyController.Instance.UpdatePlayerItem();
         }
-        if (isClient)
+        else if (isClient)
         {
-            Debug.Log("degisla client");
-            LobbyController.Instance.UpdatePlayerList();
+            
+            LobbyController.Instance.UpdatePlayerItem();
 
         }
 

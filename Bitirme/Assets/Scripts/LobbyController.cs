@@ -53,10 +53,7 @@ public class LobbyController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("r"))
-        {
-            ReadyPlayer();
-        }
+        
     }
     public void UpdateLobbyName()
     {
@@ -70,13 +67,23 @@ public class LobbyController : MonoBehaviour
 
         if (!PlayerItemCreated)
         {
+            Debug.Log("Create List");
             CreateHostPlayerItem();
         }
-        if (PlayerListItems.Count < Manager.GamePlayers.Count) { CreateClientPlayerItem(); }
+        if (PlayerListItems.Count < Manager.GamePlayers.Count) {
+            Debug.Log("Create Client");
+            CreateClientPlayerItem(); 
+        }
 
-        if(PlayerListItems.Count > Manager.GamePlayers.Count) { RemovePlayerItem(); }
+        if(PlayerListItems.Count > Manager.GamePlayers.Count) {
+            Debug.Log("Remove Client");
+            RemovePlayerItem(); 
+        }
 
-        if(PlayerListItems.Count > Manager.GamePlayers.Count) { UpdatePlayerItem(); }
+        if(PlayerListItems.Count > Manager.GamePlayers.Count) {
+            Debug.Log("Update player");
+            UpdatePlayerItem(); 
+        }
 
     }
     public void FindLocalPlayer() {
@@ -188,8 +195,10 @@ public class LobbyController : MonoBehaviour
     }
 
     public void UpdatePlayerItem() {
+        Debug.Log("öldür");
         foreach (PlayerObjectController player in Manager.GamePlayers)
         {
+            Debug.Log("zaza");
             foreach (PlayerListItem PlayerListItemScript in PlayerListItems)
             {
                 if (PlayerListItemScript.ConnectionID == player.ConnectionID) {

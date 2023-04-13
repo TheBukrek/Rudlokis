@@ -29,6 +29,9 @@ public class PlayerListItem : MonoBehaviour
 
     public void ChangeReadyStatus()
     {
+        
+        Debug.Log("Change");
+        Debug.Log(Ready);
         if (Ready)
         {
             PlayerReadyText.text = "Ready";
