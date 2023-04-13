@@ -784,6 +784,98 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695141215}
   m_CullTransparentMesh: 1
+--- !u!1 &719538704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 719538708}
+  - component: {fileID: 719538707}
+  - component: {fileID: 719538706}
+  - component: {fileID: 719538705}
+  m_Layer: 0
+  m_Name: NewNetworkManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &719538705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719538704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetX: 0
+  offsetY: 0
+--- !u!114 &719538706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719538704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e55fca1f4e4844593a3dd65a3ecb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Channels: 0200000001000000
+  Timeout: 25
+  AllowSteamRelay: 1
+  UseNextGenSteamNetworking: 1
+--- !u!114 &719538707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719538704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab4c8111b7c411b9b92cf3dbc5bd4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 1
+  runInBackground: 1
+  autoStartServerBuild: 1
+  autoConnectClientBuild: 0
+  sendRate: 30
+  offlineScene: 
+  onlineScene: 
+  transport: {fileID: 719538706}
+  networkAddress: localhost
+  maxConnections: 100
+  authenticator: {fileID: 0}
+  playerPrefab: {fileID: 5212296316245805002, guid: 52d86f1dc931c1c42b4f4440a205d088, type: 3}
+  autoCreatePlayer: 1
+  playerSpawnMethod: 0
+  spawnPrefabs: []
+  timeInterpolationGui: 0
+--- !u!4 &719538708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719538704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.03923, y: -4.8700433, z: -14.603216}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &755971772
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,6 +1064,10 @@ PrefabInstance:
     - target: {fileID: 26610016084729202, guid: 9b3c288b698b15e4a872e27b3b368d00, type: 3}
       propertyPath: m_Name
       value: SteamManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 26610016084729202, guid: 9b3c288b698b15e4a872e27b3b368d00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b3c288b698b15e4a872e27b3b368d00, type: 3}
@@ -1895,38 +1991,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 5240514843209409219, guid: 99dc0906753e736459799513df0fbde0, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
-      propertyPath: onlineScene
-      value: Assets/Scenes/MainMenuScene.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
-      propertyPath: offlineScene
-      value: Assets/Scenes/MainMenuScene.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
-      propertyPath: playerPrefab
+      propertyPath: transport
       value: 
-      objectReference: {fileID: 1174468345130753011, guid: 6f57ab05c2b321749ac1d341e8605359, type: 3}
-    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
-      propertyPath: GamePlayerPrefab
-      value: 
-      objectReference: {fileID: 3420922412309496206, guid: 59f5882deb352b3499af090386eba67d, type: 3}
-    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
-      propertyPath: autoCreatePlayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
-      propertyPath: spawnPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5240514843209409228, guid: 99dc0906753e736459799513df0fbde0, type: 3}
-      propertyPath: spawnPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 2831513090057146917, guid: 59f5882deb352b3499af090386eba67d, type: 3}
+      objectReference: {fileID: 2096633283}
     - target: {fileID: 5240514843209409231, guid: 99dc0906753e736459799513df0fbde0, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2935,3 +3007,14 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863945314}
   m_CullTransparentMesh: 1
+--- !u!114 &2096633283 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5240514843209409229, guid: 99dc0906753e736459799513df0fbde0, type: 3}
+  m_PrefabInstance: {fileID: 1376332062}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e55fca1f4e4844593a3dd65a3ecb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5240514843209409228}
   - component: {fileID: 5240514843209409229}
   - component: {fileID: 5240514843209409218}
-  - component: {fileID: 5240514843209409230}
+  - component: {fileID: 2096633286}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -52,17 +52,19 @@ MonoBehaviour:
   autoStartServerBuild: 1
   autoConnectClientBuild: 0
   sendRate: 30
-  offlineScene: 
-  onlineScene: 
-  transport: {fileID: 5240514843209409230}
+  offlineScene: Assets/Scenes/MainMenuScene.unity
+  onlineScene: Assets/Scenes/MainMenuScene.unity
+  transport: {fileID: 5240514843209409229}
   networkAddress: localhost
   maxConnections: 100
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 1174468345130753011, guid: 6f57ab05c2b321749ac1d341e8605359, type: 3}
   autoCreatePlayer: 0
   playerSpawnMethod: 0
-  spawnPrefabs: []
+  spawnPrefabs:
+  - {fileID: 2831513090057146917, guid: 59f5882deb352b3499af090386eba67d, type: 3}
   timeInterpolationGui: 0
+  GamePlayerPrefab: {fileID: 3420922412309496206, guid: 59f5882deb352b3499af090386eba67d, type: 3}
 --- !u!114 &5240514843209409229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,7 +96,7 @@ MonoBehaviour:
   CurrentLobbyID: 0
   HostButton: {fileID: 0}
   LobbyNameText: {fileID: 0}
---- !u!114 &5240514843209409230
+--- !u!114 &2096633286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,21 +105,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5240514843209409219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
+  m_Script: {fileID: 11500000, guid: ef4bffeda13d7a748973ff9204401c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Port: 7777
-  DualMode: 1
-  NoDelay: 1
-  Interval: 10
-  Timeout: 10000
-  FastResend: 2
-  SendWindowSize: 4096
-  ReceiveWindowSize: 4096
-  MaxRetransmit: 40
-  MaximizeSocketBuffers: 1
-  ReliableMaxMessageSize: 298449
-  UnreliableMaxMessageSize: 1199
-  debugLog: 0
-  statisticsGUI: 0
-  statisticsLog: 0
