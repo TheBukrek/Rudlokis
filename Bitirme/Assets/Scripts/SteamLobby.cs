@@ -18,7 +18,7 @@ public class SteamLobby : MonoBehaviour
     
     //Variables
     public ulong CurrentLobbyID;
-    private const string HostAddressKey = "HostAdress";
+    private const string HostAddressKey = "HostAddress";
     private CustomNetworkManager manager;
     
     //Gameobject
@@ -64,19 +64,19 @@ public class SteamLobby : MonoBehaviour
             return;
         }
         
-        Debug.Log("Lobby created successfully.");
         manager.StartHost();
         SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey,
             SteamUser.GetSteamID().ToString());
         SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), "name",
             SteamFriends.GetPersonaName().ToString() + "'s lobby");
         
+        Debug.Log("Lobby created successfully.");
     }
 
     private void OnJoinRequest(GameLobbyJoinRequested_t callback)
     {
-        Debug.Log("Request to join lobby");
         SteamMatchmaking.JoinLobby(callback.m_steamIDLobby);
+        Debug.Log("Request to join lobby");
     }
 
     private void OnLobbyEntered(LobbyEnter_t callback)
@@ -95,6 +95,7 @@ public class SteamLobby : MonoBehaviour
 
         manager.networkAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey);
         manager.StartClient();
+        Debug.Log("Lobby entered");
     }
 
     public void JoinLobby(CSteamID lobbyID)
