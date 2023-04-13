@@ -51,6 +51,13 @@ public class LobbyController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown("r"))
+        {
+            ReadyPlayer();
+        }
+    }
     public void UpdateLobbyName()
     {
         CurrentLobbyID = Manager.GetComponent<SteamLobby>().CurrentLobbyID;
@@ -81,7 +88,7 @@ public class LobbyController : MonoBehaviour
         foreach (PlayerObjectController player in Manager.GamePlayers) {
 
             GameObject NewPlayerItem = Instantiate(PlayerListItemPrefab, Vector3.zero, Quaternion.identity) as GameObject;
-            Debug.Log(NewPlayerItem.transform.position);
+            
             
             PlayerListItem NewPlayerItemScript = NewPlayerItem.GetComponent<PlayerListItem>();
 

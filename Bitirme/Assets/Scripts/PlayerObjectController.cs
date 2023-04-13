@@ -16,8 +16,9 @@ public class PlayerObjectController : NetworkBehaviour
     public string PlayerName;
 
 
-    [SyncVar(hook = nameof(PlayerReadyUpdate))]
-    public bool Ready;
+    
+    //[SyncVar(hook = nameof(PlayerReadyUpdate))]
+    [SyncVar] public bool Ready;
 
     private CustomNetworkManager manager;
 
@@ -72,10 +73,12 @@ public class PlayerObjectController : NetworkBehaviour
     {
         if (isServer)
         {
+            Debug.Log("degisla server");
             this.Ready = newValue;
         }
         if (isClient)
         {
+            Debug.Log("degisla client");
             LobbyController.Instance.UpdatePlayerList();
 
         }
@@ -93,6 +96,7 @@ public class PlayerObjectController : NetworkBehaviour
     {
         if (isOwned)
         {
+            
             CMdSetPlayerReady();
         }
     }
