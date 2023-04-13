@@ -17,8 +17,8 @@ public class PlayerObjectController : NetworkBehaviour
 
 
     
-    //[SyncVar(hook = nameof(PlayerReadyUpdate))]
-    [SyncVar] public bool Ready;
+    [SyncVar(hook = nameof(PlayerReadyUpdate))]
+    public bool Ready;
 
     private CustomNetworkManager manager;
 
