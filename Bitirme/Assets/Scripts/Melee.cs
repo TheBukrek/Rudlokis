@@ -1,7 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Melee : MonoBehaviour
 {
@@ -9,23 +9,27 @@ public class Melee : MonoBehaviour
     Vector3 previousPosition;
     float velocity;
 
+    Haptic swingHaptic;
+
     public float swingAmountRequired = 1;
     public float swingAmountCurrent  = 0;
     public float swingAmountMinimumVelocity = 1;
 
-    private GameObject[] multipleEnemy;
 
     public Transform spawnPoint;
-    public Vector3 midVector;
-    public Vector3 midPoint;
-    public Vector3 startPoint;
-    public Vector3 swingStartVector;
 
-    public Vector3 startRotation;
-    public Vector3 endRotation;
+    private Vector3 midPoint;
+    private Vector3 startPoint;
+    private Vector3 swingStartVector;
 
+    private Vector3 startRotation;
+    
+    private Vector3 endRotation;
 
-    public Vector3 closeEnemy;
+    private Quaternion midRotation;
+    private bool midRotationAssigned;
+    XRBaseInteractable interactable;
+
 
     public GameObject projectilePrefab;
 
@@ -40,6 +44,8 @@ public class Melee : MonoBehaviour
         velocity = ((transform.position - previousPosition).magnitude) / Time.deltaTime;
         previousPosition = transform.position;
 
+        interactable = GetComponent<XRBaseInteractable>();
+
     }
 
     // Update is called once per frame
@@ -52,10 +58,11 @@ public class Melee : MonoBehaviour
 
         if (velocity >= swingAmountMinimumVelocity)
         {
+            // swingHaptic.TriggerHaptic(interactable, 0.05f, 0.1f );
 
             if (swingAmountCurrent == 0) {
                 //Debug.Log("Swing Started");
-                swingStartVector = spawnPoint.forward;
+                swingStartVector = spawnPoint.up;
                 startRotation = spawnPoint.eulerAngles;
                 quaternionList.Add(spawnPoint.rotation);
 
@@ -65,30 +72,25 @@ public class Melee : MonoBehaviour
 
             swingAmountCurrent += Time.deltaTime * velocity;
 
+            if( swingAmountCurrent >= swingAmountRequired / 2 ){
+                if( midRotationAssigned == false){
+                    midRotation = spawnPoint.rotation;
+                    midPoint = spawnPoint.position;
+                    midRotationAssigned = true;
+                    Debug.Log("midRotationAssigned    swing progress: %"+swingAmountCurrent/swingAmountRequired*100);
+                }
+               
+                
+            }else{
+                midRotationAssigned = false;
+            }
+
+
             if (swingAmountCurrent >= swingAmountRequired) {
 
-                midVector = (spawnPoint.forward.normalized + swingStartVector.normalized).normalized;
-                endRotation = spawnPoint.eulerAngles;
-                float angle = Vector3.Angle(swingStartVector, spawnPoint.forward);
-                //endRotation = new Vector3(endRotation.x - angle/2, endRotation.y, endRotation.z);
-                midPoint = (spawnPoint.position + startPoint)/2;
                 swingAmountCurrent = 0f;
-
-                
-                //Vector3 midRotation = new Vector3( (startRotation.x + endRotation.x)/2f, (startRotation.y + endRotation.y) / 2f, (startRotation.z + endRotation.z) /2f    );
-                Quaternion midRotation = calcAvg(quaternionList);
-
-                Vector3 proj = Vector3.Project(spawnPoint.forward, swingStartVector);
-                
-                
-                
-
-
-
-                GameObject newProjectile = Instantiate<GameObject>(projectilePrefab, midPoint, Quaternion.Euler(endRotation)) ;
-                newProjectile.GetComponent<SwordProjectile>().speed = Math.Min(6, velocity * 2);
-
-
+                GameObject newProjectile = Instantiate<GameObject>(projectilePrefab, midPoint, midRotation) ;
+                newProjectile.GetComponent<SwordProjectile>().speed = Math.Min(20, velocity * 20);
 
             }
 
@@ -100,56 +102,11 @@ public class Melee : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.CompareTag("Enemy"))
-        {
-            if (velocity >= 2f)
-            {
-                //Debug.Log("velocity:   " + map(velocity, 2, 10, 1, 2));
-                EnemyScript enemy = collision.transform.GetComponent<EnemyScript>();
-
-                enemy.Damage(map(velocity,2,10,1,2) * 30);
-            }
-        }
-    }
 
     float map(float s, float a1, float a2, float b1, float b2)
     {
         return b1 + (s - a1) * (b2 - b1) / (a2 - a1);
     }
-    public Transform getClosestEnemy()
-    {
-        multipleEnemy = GameObject.FindGameObjectsWithTag("Enemy");
-        float closestdis = Mathf.Infinity;
-        Transform trans = null;
-
-        foreach (GameObject go in multipleEnemy)
-        {
-            float currentDis;
-            currentDis = Vector3.Distance(transform.position, go.transform.position);
-            if (currentDis < closestdis)
-            {
-                closestdis = currentDis;
-                trans = go.transform;
-            }
-        }
-        return trans;
-
-    }
-
-    private Quaternion calcAvg(List<Quaternion> rotationlist)
-    {
-        if (rotationlist.Count == 0)
-            throw new ArgumentException();
-
-        float x = 0, y = 0, z = 0, w = 0;
-        foreach (Quaternion q in rotationlist)
-        {
-            x += q.x; y += q.y; z += q.z; w += q.w;
-        }
-        float k = 1.0f / Mathf.Sqrt(x * x + y * y + z * z + w * w);
-        return new Quaternion(x * k, y * k, z * k, w * k);
-    }
+    
 
 }

@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
+using Steamworks;
 
 public class FireBulletOnActivate : MonoBehaviour
 {
@@ -29,15 +30,28 @@ public class FireBulletOnActivate : MonoBehaviour
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
         shootingSound = GetComponent<AudioSource>();
         grabbable.activated.AddListener(FireBullet);
+    
+        
         grabbable.selectEntered.AddListener(SetHand);
         grabbable.selectExited.AddListener(UnsetHand);
         ammoCountText.text = ammoCount.ToString();
     }
 
+    public void DamageUp() {
+        damage += 10f;
+    }
+
+    public void DamageDown() {
+        damage -= 10f;
+    }
+
     public void FireBullet(ActivateEventArgs args)
-    {
+    {   
+        Debug.Log(damage);
         if (currentAmmo > 0)
         {
+            SteamUserStats.SetAchievement("FIRST_SHOT");
+            SteamUserStats.StoreStats();
             // GameObject spawnedBullet = Instantiate(bullet);
             // spawnedBullet.transform.position = spawnPoint.position;
             // spawnedBullet.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireSpeed;
@@ -90,6 +104,19 @@ public class FireBulletOnActivate : MonoBehaviour
                 leftReload.action.started += Reload;
             }
         }
+        else if (args.interactorObject is XRRayInteractor)
+        {
+            HandData handData = args.interactorObject.transform.parent.GetComponentInChildren<HandData>();
+
+            if (handData.handType == HandData.HandModelType.Right)
+            {
+                rightReload.action.started += Reload;
+            }
+            else
+            {
+                leftReload.action.started += Reload;
+            }
+        }
     }
     
     public void UnsetHand(BaseInteractionEventArgs args)
@@ -97,6 +124,19 @@ public class FireBulletOnActivate : MonoBehaviour
         if (args.interactorObject is XRDirectInteractor)
         {
             HandData handData = args.interactorObject.transform.GetComponentInChildren<HandData>();
+
+            if (handData.handType == HandData.HandModelType.Right)
+            {
+                rightReload.action.started -= Reload;
+            }
+            else
+            {
+                leftReload.action.started -= Reload;
+            }
+        }
+        else if (args.interactorObject is XRRayInteractor)
+        {
+            HandData handData = args.interactorObject.transform.parent.GetComponentInChildren<HandData>();
 
             if (handData.handType == HandData.HandModelType.Right)
             {

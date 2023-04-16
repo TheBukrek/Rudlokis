@@ -26,19 +26,34 @@ public class GrabHandPose : MonoBehaviour
     void Start()
     {
         XRGrabInteractable grabInteractable = GetComponent<XRGrabInteractable>();
-        
         grabInteractable.selectEntered.AddListener(SetupPose);
         grabInteractable.selectExited.AddListener(UnsetPose);
         
         rightHandPose.gameObject.SetActive(false);
         leftHandPose.gameObject.SetActive(false);
     }
-
+    
     public void SetupPose(BaseInteractionEventArgs arg)
     {
         if (arg.interactorObject is XRDirectInteractor)
         {
             HandData handData = arg.interactorObject.transform.GetComponentInChildren<HandData>();
+            handData.animator.enabled = false;
+
+            if (handData.handType == HandData.HandModelType.Right)
+            {
+                SetHandDataValues(handData, rightHandPose);
+            }
+            else
+            {
+                SetHandDataValues(handData, leftHandPose);
+            }
+            StartCoroutine(SetHandDataRoutine(handData, finalHandPosition, finalHandRotation, finalFingerRotations,
+                startingHandPosition, startingHandRotation, startingFingerRotations));
+        }
+        else if (arg.interactorObject is XRRayInteractor)
+        {
+            HandData handData = arg.interactorObject.transform.parent.GetComponentInChildren<HandData>();
             handData.animator.enabled = false;
 
             if (handData.handType == HandData.HandModelType.Right)
@@ -65,6 +80,14 @@ public class GrabHandPose : MonoBehaviour
                     finalHandPosition, finalHandRotation, finalFingerRotations));
 
         }
+        else if (arg.interactorObject is XRRayInteractor)
+        {
+            HandData handData = arg.interactorObject.transform.parent.GetComponentInChildren<HandData>();
+            handData.animator.enabled = true;
+            
+            StartCoroutine(SetHandDataRoutine(handData, startingHandPosition, startingHandRotation, startingFingerRotations,
+                finalHandPosition, finalHandRotation, finalFingerRotations));
+        }
     }
 
     public void SetHandDataValues(HandData h1, HandData h2)
@@ -75,10 +98,7 @@ public class GrabHandPose : MonoBehaviour
         finalHandPosition = new Vector3(h2.root.localPosition.x / h2.root.localScale.x,
             h2.root.localPosition.y/ h2.root.localScale.y,
             h2.root.localPosition.z/ h2.root.localScale.z);
-
-        // startingHandPosition = h1.root.localPosition;
-        // finalHandPosition = h2.root.localPosition;
-
+        
         startingHandRotation = h1.root.localRotation;
         finalHandRotation = h2.root.localRotation;
 

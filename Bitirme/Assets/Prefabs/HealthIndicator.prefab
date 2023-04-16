@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 1035101820409090273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8703747887723198667}
   - {fileID: 7831262497841707744}
@@ -54,9 +54,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e7dad910c1d13e46974be1dbf38d581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthMaterials:
+  - {fileID: 2100000, guid: c25f902c88449de45894734215481ecf, type: 2}
+  - {fileID: 2100000, guid: 03538933a39d8db4cae80cf2a9f2abbc, type: 2}
+  - {fileID: 2100000, guid: ed0c9ac80e3c5424881d6acded4030ce, type: 2}
   MAX_HEALTH: 100
-  health: 100
-  regen: 0.1
+  health: 20
+  regen: 0.5
   Segments:
   - {fileID: 0}
   - {fileID: 0}

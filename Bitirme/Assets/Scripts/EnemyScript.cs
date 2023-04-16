@@ -34,6 +34,7 @@ public class EnemyScript : MonoBehaviour
                 animator.SetTrigger("die");
                 GetComponent<AudioSource>().clip = attackSounds[Random.Range(0, deathSounds.Length-1)];
                 GetComponent<AudioSource>().Play();
+                GameManager.Instance.AddXp(GameManager.Instance.enemyXpReward1);
             }
             if(timeToDestroy <= 0f){
                 Destroy(gameObject);
