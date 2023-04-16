@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ZombieScene.unity
     guid: d22afbbfa1c98db4cb3de41826b3a33a
+  - enabled: 1
+    path: Assets/Scenes/OnlineDeneme.unity
+    guid: 87064263ef9bf3e498499ed29a0e64a7
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d7ca1268af179ce49807d745629b78e7, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8b704175871042644b8c74148ad63d30, type: 2}
