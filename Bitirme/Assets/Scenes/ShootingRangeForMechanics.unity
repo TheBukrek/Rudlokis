@@ -854,14 +854,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3358600710294745290, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
-      propertyPath: leftReload
-      value: 
-      objectReference: {fileID: -7479308135824070112, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    - target: {fileID: 3358600710294745290, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
-      propertyPath: rightReload
-      value: 
-      objectReference: {fileID: -8899104054584623456, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    - target: {fileID: 3358600710294745290, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
       propertyPath: hapticController
       value: 
       objectReference: {fileID: 940939784}
@@ -1471,18 +1463,6 @@ PrefabInstance:
       propertyPath: continuousTurn
       value: 
       objectReference: {fileID: 1192341816}
-    - target: {fileID: 1410248009059025522, guid: dc826f13f5ebf2043aa9058918580ce1, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1463088600918001089, guid: dc826f13f5ebf2043aa9058918580ce1, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2902955562701902179, guid: dc826f13f5ebf2043aa9058918580ce1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5444835628490374354, guid: dc826f13f5ebf2043aa9058918580ce1, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1653,14 +1633,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Assault Rifle
       objectReference: {fileID: 0}
-    - target: {fileID: 6280644614158077880, guid: 733f5837b7718bc48aa6fea2abeacb0e, type: 3}
-      propertyPath: leftReload
-      value: 
-      objectReference: {fileID: -7479308135824070112, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    - target: {fileID: 6280644614158077880, guid: 733f5837b7718bc48aa6fea2abeacb0e, type: 3}
-      propertyPath: rightReload
-      value: 
-      objectReference: {fileID: -8899104054584623456, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 6280644614158077880, guid: 733f5837b7718bc48aa6fea2abeacb0e, type: 3}
       propertyPath: hapticController
       value: 
