@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1007648293, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
+      propertyPath: rightHandPose
+      value: 
+      objectReference: {fileID: 7295492766571240551}
     - target: {fileID: 1060919893271907241, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -90,6 +94,10 @@ PrefabInstance:
     - target: {fileID: 5677486770577915924, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
       propertyPath: hapticController
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082079858418182709, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6309970012989248562, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
       propertyPath: m_IsActive
@@ -262,7 +270,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890288131086722512}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b17f472e163603e449ff7e1dba0cc0b0, type: 3}
   m_Name: 
@@ -274,7 +282,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 12
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_CustomReticle: {fileID: 0}
@@ -361,3 +369,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1636651460, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
   m_PrefabInstance: {fileID: 1865379901802680236}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7295492766571240551 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8997599589157770187, guid: 7f5b75be2f9345648bb0f5c1c1b95f43, type: 3}
+  m_PrefabInstance: {fileID: 1865379901802680236}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69781abaf08d57438d815ce3454440e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
