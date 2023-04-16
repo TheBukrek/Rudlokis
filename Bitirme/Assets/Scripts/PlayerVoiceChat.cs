@@ -54,6 +54,9 @@ public class PlayerVoiceChat : NetworkBehaviour
     [TargetRpc(channel = 1)]
     void Target_PlaySound(NetworkConnection conn, byte[] destBuffer, uint bytesWritten)
     {
+        if (isLocalPlayer) {
+            return;
+        }
         Debug.Log("Target");
         byte[] destBuffer2 = new byte[22050 * 2];
         uint bytesWritten2;

@@ -1838,22 +1838,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkManager
       objectReference: {fileID: 0}
-    - target: {fileID: 5240514843209409229, guid: 99dc0906753e736459799513df0fbde0, type: 3}
-      propertyPath: Channels.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5240514843209409229, guid: 99dc0906753e736459799513df0fbde0, type: 3}
-      propertyPath: Channels.Array.data[0]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5240514843209409229, guid: 99dc0906753e736459799513df0fbde0, type: 3}
-      propertyPath: Channels.Array.data[1]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5240514843209409229, guid: 99dc0906753e736459799513df0fbde0, type: 3}
-      propertyPath: Channels.Array.data[2]
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5240514843209409231, guid: 99dc0906753e736459799513df0fbde0, type: 3}
       propertyPath: m_RootOrder
       value: 8
