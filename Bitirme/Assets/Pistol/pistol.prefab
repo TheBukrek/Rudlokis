@@ -5223,8 +5223,8 @@ GameObject:
   - component: {fileID: 994940815}
   - component: {fileID: 1948040508}
   - component: {fileID: 2658790295781069296}
-  - component: {fileID: 1472078561}
   - component: {fileID: 3358600710294745290}
+  - component: {fileID: 2043114500}
   m_Layer: 7
   m_Name: pistol
   m_TagString: Untagged
@@ -5400,7 +5400,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1472078561
+--- !u!114 &3358600710294745290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5409,16 +5409,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 4511655667520406305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91598b2059e16cc48ab24a32db7b0262, type: 3}
+  m_Script: {fileID: 11500000, guid: 02e2099c39c4b5c4faf0c6089d27a9b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnPoint: {fileID: 1868707905}
+  muzzleFlash: {fileID: 208488776}
+  bulletHitEffect: {fileID: 5307049444064065503}
+  shootingSound: {fileID: 2658790295781069296}
+  hapticController: {fileID: 0}
+  fireType: 0
+  bulletType: 0
+  damage: 20
+  fireRate: 2
+  ammoText: {fileID: 1593212625}
+  ammoCountMax: 100
+  ammoCount: 12
+  numberOfBulletsToBurst: 3
+  burstFireRate: 23.9
+  leftReload: {fileID: -7479308135824070112, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightReload: {fileID: -8899104054584623456, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &2043114500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4511655667520406305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 994940815}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 13
+    m_Bits: 12
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
@@ -5449,34 +5478,10 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1948040508}
-        m_TargetAssemblyTypeName: GrabHandPose, Assembly-CSharp
-        m_MethodName: SetupPose
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1948040508}
-        m_TargetAssemblyTypeName: GrabHandPose, Assembly-CSharp
-        m_MethodName: UnsetPose
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -5513,8 +5518,8 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
-  m_SecondaryAttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 2035814278}
+  m_SecondaryAttachTransform: {fileID: 2048707778}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
@@ -5559,36 +5564,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  leftAttachTransform: {fileID: 2035814278}
-  rightAttachTransform: {fileID: 2048707778}
---- !u!114 &3358600710294745290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4511655667520406305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02e2099c39c4b5c4faf0c6089d27a9b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpawnPoint: {fileID: 1868707905}
-  muzzleFlash: {fileID: 208488776}
-  bulletHitEffect: {fileID: 5307049444064065503}
-  shootingSound: {fileID: 2658790295781069296}
-  hapticController: {fileID: 0}
-  fireType: 0
-  bulletType: 0
-  damage: 20
-  fireRate: 2
-  ammoText: {fileID: 1593212625}
-  ammoCountMax: 100
-  ammoCount: 12
-  numberOfBulletsToBurst: 3
-  burstFireRate: 23.9
-  leftReload: {fileID: -7479308135824070112, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  rightReload: {fileID: -8899104054584623456, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &4511655667520406309
 GameObject:
   m_ObjectHideFlags: 0
