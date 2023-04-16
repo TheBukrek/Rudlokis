@@ -5356,8 +5356,12 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+  secondInt: []
   leftAttachTransform: {fileID: 6463138045637574708}
   rightAttachTransform: {fileID: 4757294380354626520}
+  leftAttachTransformSecond: {fileID: 0}
+  rightAttachTransformSecond: {fileID: 0}
+  rotationType: 0
 --- !u!114 &4813726551075286249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5371,7 +5375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poseTransitionDuration: 0.2
-  rightHandPose: {fileID: 6086174833110053346}
+  rightHandPose: {fileID: 2880965249402424211}
   leftHandPose: {fileID: 5322310782340816601}
 --- !u!114 &1662875506
 MonoBehaviour:
@@ -5389,13 +5393,6 @@ MonoBehaviour:
   swingAmountCurrent: 0
   swingAmountMinimumVelocity: 1
   spawnPoint: {fileID: 8043462590530802594}
-  midVector: {x: 0, y: 0, z: 0}
-  midPoint: {x: 0, y: 0, z: 0}
-  startPoint: {x: 0, y: 0, z: 0}
-  swingStartVector: {x: 0, y: 0, z: 0}
-  startRotation: {x: 0, y: 0, z: 0}
-  endRotation: {x: 0, y: 0, z: 0}
-  closeEnemy: {x: 0, y: 0, z: 0}
   projectilePrefab: {fileID: 717713167539222767, guid: d53d575697295bf449d189b06a825629, type: 3}
   quaternionList: []
 --- !u!1001 &846907261543744084
@@ -6819,9 +6816,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5686134208185136556, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
   m_PrefabInstance: {fileID: 4782377650439345362}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6086174833110053346 stripped
+--- !u!114 &2880965249402424211 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1596531433462441264, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7324354393620619073, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
   m_PrefabInstance: {fileID: 4782377650439345362}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916306383603875104}

@@ -252,6 +252,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3102499303628958215, guid: be7edd9c916f8a048a7e416e583f354a, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 896506497}
     - target: {fileID: 6918120448333403907, guid: be7edd9c916f8a048a7e416e583f354a, type: 3}
       propertyPath: m_Name
       value: SM_Muzzle_Brake_Compensator_01
