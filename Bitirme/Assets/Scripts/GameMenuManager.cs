@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameMenuManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameMenuManager : MonoBehaviour
     public InputActionProperty showButton;
     public Transform head;
     public float spawnDistance = 2f;
+    public TextMeshProUGUI levelArea;
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +39,8 @@ public class GameMenuManager : MonoBehaviour
             menu.transform.LookAt(new Vector3(head.position.x, menu.transform.position.y, head.position.z));
             menu.transform.forward *= -1;
         }
+
+        levelArea.text = "XP:" + Mathf.FloorToInt(GameManager.Instance.xp) +"/"+ Mathf.FloorToInt(GameManager.Instance.requiredXp) + "\n Level:"+ Mathf.FloorToInt(GameManager.Instance.level);
+        
     }
 }

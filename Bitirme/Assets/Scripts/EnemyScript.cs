@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyScript : MonoBehaviour
 {
+    
     public float health;
     // Start is called before the first frame update
     Animator animator;
@@ -34,6 +36,8 @@ public class EnemyScript : MonoBehaviour
                 animator.SetTrigger("die");
                 GetComponent<AudioSource>().clip = attackSounds[Random.Range(0, deathSounds.Length-1)];
                 GetComponent<AudioSource>().Play();
+                GameManager.Instance.AddXp(GameManager.Instance.enemyXpReward1);
+                
             }
             if(timeToDestroy <= 0f){
                 Destroy(gameObject);
