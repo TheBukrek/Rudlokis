@@ -5181,9 +5181,9 @@ GameObject:
   - component: {fileID: 3538353723166305127}
   - component: {fileID: 1662875505}
   - component: {fileID: 7148871006332497469}
-  - component: {fileID: 4632369651309232344}
   - component: {fileID: 4813726551075286249}
   - component: {fileID: 1662875506}
+  - component: {fileID: 1977810871}
   m_Layer: 7
   m_Name: Sword
   m_TagString: Untagged
@@ -5241,7 +5241,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4632369651309232344
+--- !u!114 &4813726551075286249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5250,18 +5250,60 @@ MonoBehaviour:
   m_GameObject: {fileID: 6942175481617219427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14064c46a148d6641805e7c7be280855, type: 3}
+  m_Script: {fileID: 11500000, guid: d917bde931063d04888cc3415f6afefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poseTransitionDuration: 0.2
+  rightHandPose: {fileID: 2880965249402424211}
+  leftHandPose: {fileID: 5322310782340816601}
+--- !u!114 &1662875506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6942175481617219427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a38a818bceb9e1c448ea20281156e641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swingAmountRequired: 1
+  swingAmountCurrent: 0
+  swingAmountMinimumVelocity: 1
+  spawnPoint: {fileID: 8043462590530802594}
+  projectilePrefab: {fileID: 717713167539222767, guid: d53d575697295bf449d189b06a825629, type: 3}
+  quaternionList: []
+--- !u!114 &1977810871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6942175481617219427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 1662875505}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 12
+  m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
   m_FirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -5292,6 +5334,9 @@ MonoBehaviour:
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -5319,7 +5364,13 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 6463138045637574708}
+  m_SecondaryAttachTransform: {fileID: 0}
+  m_UseDynamicAttach: 0
+  m_MatchAttachPosition: 1
+  m_MatchAttachRotation: 1
+  m_SnapToColliderVolume: 1
+  m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
   m_MovementType: 2
   m_VelocityDamping: 1
@@ -5356,48 +5407,9 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
-  leftAttachTransform: {fileID: 6463138045637574708}
-  rightAttachTransform: {fileID: 4757294380354626520}
---- !u!114 &4813726551075286249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6942175481617219427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d917bde931063d04888cc3415f6afefb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poseTransitionDuration: 0.2
-  rightHandPose: {fileID: 6086174833110053346}
-  leftHandPose: {fileID: 5322310782340816601}
---- !u!114 &1662875506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6942175481617219427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a38a818bceb9e1c448ea20281156e641, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swingAmountRequired: 1
-  swingAmountCurrent: 0
-  swingAmountMinimumVelocity: 1
-  spawnPoint: {fileID: 8043462590530802594}
-  midVector: {x: 0, y: 0, z: 0}
-  midPoint: {x: 0, y: 0, z: 0}
-  startPoint: {x: 0, y: 0, z: 0}
-  swingStartVector: {x: 0, y: 0, z: 0}
-  startRotation: {x: 0, y: 0, z: 0}
-  endRotation: {x: 0, y: 0, z: 0}
-  closeEnemy: {x: 0, y: 0, z: 0}
-  projectilePrefab: {fileID: 717713167539222767, guid: d53d575697295bf449d189b06a825629, type: 3}
-  quaternionList: []
+  m_StartingSingleGrabTransformers: []
+  m_StartingMultipleGrabTransformers: []
+  m_AddDefaultGrabTransformers: 1
 --- !u!1001 &846907261543744084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6819,9 +6831,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5686134208185136556, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
   m_PrefabInstance: {fileID: 4782377650439345362}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6086174833110053346 stripped
+--- !u!114 &2880965249402424211 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1596531433462441264, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7324354393620619073, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
   m_PrefabInstance: {fileID: 4782377650439345362}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916306383603875104}
@@ -6840,10 +6852,6 @@ PrefabInstance:
     - target: {fileID: 1000012599527578, guid: 0d8752141728a314cbd5eb9452effddb, type: 3}
       propertyPath: m_Name
       value: RB_Gladius
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000012599527578, guid: 0d8752141728a314cbd5eb9452effddb, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4000013306898074, guid: 0d8752141728a314cbd5eb9452effddb, type: 3}
       propertyPath: m_RootOrder

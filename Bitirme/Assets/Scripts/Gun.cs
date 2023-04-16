@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
+using TMPro;
 
 
 public enum FireType { Single, Auto, Burst };
@@ -29,7 +30,10 @@ public class Gun : MonoBehaviour
 
     private int remainingBurstBullet;
 
+    public TextMeshProUGUI ammoText;
+
     //[HideInInspector]
+    public int ammoCountMax = 100;
     public int ammoCount = 100;
 
 
@@ -49,9 +53,8 @@ public class Gun : MonoBehaviour
 
 
 
-
-
-
+    public InputActionReference leftReload;
+    public InputActionReference rightReload;
 
 
     public bool HasEnoughAmmo()
@@ -129,6 +132,8 @@ public class Gun : MonoBehaviour
     public void CalculateBulletRaycastHit()
     {
         RaycastHit hit;
+        ammoCount--;
+        ammoText.text = ammoCount.ToString();
         if (Physics.Raycast(bulletSpawnPoint.position, bulletSpawnPoint.forward, out hit))
         {
 
@@ -169,6 +174,7 @@ public class Gun : MonoBehaviour
 
 
             //update ammo text
+
 
             justPressedTrigger = false;
             Debug.Log("Just pressed 2" + justPressedTrigger);
@@ -288,9 +294,82 @@ public class Gun : MonoBehaviour
 
 
 
+    /// <summary>
+    /// reload related
+    /// </summary>
+    public void Reload(InputAction.CallbackContext context)
+    {
+        ammoCount = ammoCountMax;
+        ammoText.text = ammoCount.ToString();
+    }
+    public void SetHand(BaseInteractionEventArgs args)
+    {
+        if (args.interactorObject is XRDirectInteractor)
+        {
+            HandData handData = args.interactorObject.transform.GetComponentInChildren<HandData>();
+
+            if (handData.handType == HandData.HandModelType.Right)
+            {
+                rightReload.action.started += Reload;
+            }
+            else
+            {
+                leftReload.action.started += Reload;
+            }
+        }
+        else if (args.interactorObject is XRRayInteractor)
+        {
+            HandData handData = args.interactorObject.transform.parent.GetComponentInChildren<HandData>();
+
+            if (handData.handType == HandData.HandModelType.Right)
+            {
+                rightReload.action.started += Reload;
+            }
+            else
+            {
+                leftReload.action.started += Reload;
+            }
+        }
+    }
+
+
+    public void UnsetHand(BaseInteractionEventArgs args)
+    {
+        if (args.interactorObject is XRDirectInteractor)
+        {
+            HandData handData = args.interactorObject.transform.GetComponentInChildren<HandData>();
+
+            if (handData.handType == HandData.HandModelType.Right)
+            {
+                rightReload.action.started -= Reload;
+            }
+            else
+            {
+                leftReload.action.started -= Reload;
+            }
+        }
+        else if (args.interactorObject is XRRayInteractor)
+        {
+            HandData handData = args.interactorObject.transform.parent.GetComponentInChildren<HandData>();
+
+            if (handData.handType == HandData.HandModelType.Right)
+            {
+                rightReload.action.started -= Reload;
+            }
+            else
+            {
+                leftReload.action.started -= Reload;
+            }
+        }
+    }
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        ammoCount = ammoCountMax;
+        ammoText.text = ammoCount.ToString();
         lastFired = -999f;
         remainingBurstBullet = numberOfBulletsToBurst;
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
@@ -298,6 +377,10 @@ public class Gun : MonoBehaviour
 
         grabbable.activated.AddListener(setIsHoldingTriggerTRUE);
         grabbable.deactivated.AddListener(setIsHoldingTriggerFALSE);
+
+
+        grabbable.selectEntered.AddListener(SetHand);
+        grabbable.selectExited.AddListener(UnsetHand);
     }
 
     // Update is called once per frame
