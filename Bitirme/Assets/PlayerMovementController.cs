@@ -30,7 +30,7 @@ public class PlayerMovementController : NetworkBehaviour
     {
         if (Input.GetKeyDown(KeyCode.N))
         {
-            Debug.Log("ldkfnslk");
+            Destroy(PlayerModel);
             SceneManager.LoadScene("MainMenuScene");
         }
         if (PlayerModel.activeSelf == false && SceneManager.GetActiveScene().name == "OnlineDeneme")
