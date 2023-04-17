@@ -17,7 +17,7 @@ public class SteamLobby : MonoBehaviour
     
     //Variables
     public ulong CurrentLobbyID;
-    private const string HostAddressKey = "HostAdress";
+    private const string HostAddressKey = "HostAddress";
     private CustomNetworkManager manager;
     
     //Gameobject
