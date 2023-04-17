@@ -645,6 +645,10 @@ PrefabInstance:
       propertyPath: m_Colliders.Array.data[0]
       value: 
       objectReference: {fileID: 994940812}
+    - target: {fileID: 1629568865, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3358600710294745290, guid: 087e2a9d318d8b842b11b221d1f79534, type: 3}
       propertyPath: hapticController
       value: 
