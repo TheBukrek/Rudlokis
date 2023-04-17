@@ -181,6 +181,7 @@ public class LobbyController : MonoBehaviour
                 PlayerListItem NewPlayerItemScript = NewPlayerItem.GetComponent<PlayerListItem>();
 
                 NewPlayerItemScript.PlayerName = player.PlayerName;
+                Debug.Log("Player name: " + player.PlayerName);
                 NewPlayerItemScript.ConnectionID = player.ConnectionID;
                 NewPlayerItemScript.PlayerSteamID = player.PlayerSteamID;
                 NewPlayerItemScript.Ready = player.Ready;
