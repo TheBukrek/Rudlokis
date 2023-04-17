@@ -30,8 +30,13 @@ public class PlayerMovementController : NetworkBehaviour
     {
         if (PlayerModel.activeSelf == false && SceneManager.GetActiveScene().name == "OnlineDeneme")
         {
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                Debug.Log("ldkfnslk");
+                SceneManager.LoadScene("MainMenuScene");
+            }
             SetPosition();
-             PlayerModel.SetActive(true);
+            PlayerModel.SetActive(true);
         }
         if (isOwned)
         {
