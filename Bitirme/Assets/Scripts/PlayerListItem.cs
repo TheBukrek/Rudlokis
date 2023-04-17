@@ -44,6 +44,7 @@ public class PlayerListItem : MonoBehaviour
     }
 
     public void SetPlayerValues() {
+        Debug.Log(PlayerName + " AKSNCAKNS");
         PlayerNameText.text = PlayerName;
         ChangeReadyStatus();
         if (!AvatarReceived) {

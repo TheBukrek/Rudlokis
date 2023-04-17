@@ -64,7 +64,6 @@ public class LobbyController : MonoBehaviour
 
     public void UpdatePlayerList()
     {
-
         if (!PlayerItemCreated)
         {
             Debug.Log("Create List");
@@ -80,7 +79,7 @@ public class LobbyController : MonoBehaviour
             RemovePlayerItem(); 
         }
 
-        if(PlayerListItems.Count > Manager.GamePlayers.Count) {
+        if(PlayerListItems.Count == Manager.GamePlayers.Count) {
             Debug.Log("Update player");
             UpdatePlayerItem(); 
         }
@@ -171,6 +170,7 @@ public class LobbyController : MonoBehaviour
     {
         foreach (PlayerObjectController player in Manager.GamePlayers)
         {
+            Debug.Log("Player name: " + player.PlayerName);
             if (!PlayerListItems.Any(b => b.ConnectionID == player.ConnectionID))
             {
                 //GameObject NewPlayerItem = Instantiate(PlayerListItemPrefab) as GameObject;
@@ -181,7 +181,6 @@ public class LobbyController : MonoBehaviour
                 PlayerListItem NewPlayerItemScript = NewPlayerItem.GetComponent<PlayerListItem>();
 
                 NewPlayerItemScript.PlayerName = player.PlayerName;
-                Debug.Log("Player name: " + player.PlayerName);
                 NewPlayerItemScript.ConnectionID = player.ConnectionID;
                 NewPlayerItemScript.PlayerSteamID = player.PlayerSteamID;
                 NewPlayerItemScript.Ready = player.Ready;
